@@ -3,7 +3,22 @@ guid: 5a0624490c7fdb047ade720dd1904620
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Scheibe_002
+    second: {fileID: 2100000, guid: 6419d93af3c060c48b20e9a3662f6cc5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blau_002
+    second: {fileID: 2100000, guid: 7f912b54a2de48f44a2871002ac299be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: verbindung_002
+    second: {fileID: 2100000, guid: c9fd44c30178ed746b67876430fcec6b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

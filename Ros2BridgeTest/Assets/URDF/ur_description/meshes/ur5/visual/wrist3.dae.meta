@@ -3,7 +3,17 @@ guid: ef0bceb34184ef447bd3d518e919ea66
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rohr_007_001
+    second: {fileID: 2100000, guid: 8946195a8eedc8c4f8baf73c39e4fa21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SWMaterial-1_004_002_001
+    second: {fileID: 2100000, guid: 06f8932d46e8cb24faf5ef962d96b574, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
