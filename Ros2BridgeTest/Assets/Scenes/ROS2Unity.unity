@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: left_knuckle
       objectReference: {fileID: 0}
+    - target: {fileID: 485756579456790538, guid: 27717cc94059ccd449e45eb3dbd932e5, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5978502612001802645, guid: 27717cc94059ccd449e45eb3dbd932e5, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.0000035
@@ -178,6 +182,10 @@ PrefabInstance:
     - target: {fileID: 5978502612001802645, guid: 27717cc94059ccd449e45eb3dbd932e5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6179487031475653860, guid: 27717cc94059ccd449e45eb3dbd932e5, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3622818825646009875, guid: 27717cc94059ccd449e45eb3dbd932e5, type: 3}
@@ -231,7 +239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 64682746}
   - component: {fileID: 64682747}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +287,7 @@ GameObject:
   - component: {fileID: 71115960}
   - component: {fileID: 71115959}
   - component: {fileID: 71115958}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ur_to_robotiq_link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -477,6 +485,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: left_finger_tip
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ac708fa63240b1742a1c42e7554806ab, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -497,7 +509,7 @@ GameObject:
   m_Component:
   - component: {fileID: 97291062}
   - component: {fileID: 97291063}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -658,7 +670,7 @@ GameObject:
   - component: {fileID: 115882499}
   - component: {fileID: 115882498}
   - component: {fileID: 115882497}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: forearm_link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -856,6 +868,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: right_knuckle
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a1916e1a840174740a125f138c9879fa, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -876,7 +892,7 @@ GameObject:
   m_Component:
   - component: {fileID: 155749177}
   - component: {fileID: 155749178}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -921,7 +937,7 @@ GameObject:
   m_Component:
   - component: {fileID: 157036502}
   - component: {fileID: 157036503}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -972,7 +988,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &182926273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1017,7 +1033,7 @@ GameObject:
   m_Component:
   - component: {fileID: 195795615}
   - component: {fileID: 195795616}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1062,7 +1078,7 @@ GameObject:
   m_Component:
   - component: {fileID: 198958471}
   - component: {fileID: 198958472}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1108,7 +1124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 201985022}
   - component: {fileID: 201985023}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1152,7 +1168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 211126562}
   - component: {fileID: 211126563}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1236,9 +1252,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5681533602754179251, guid: 8c8560bc7f4598645b9da705e44fdf77, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6222823318986826638, guid: 8c8560bc7f4598645b9da705e44fdf77, type: 3}
       propertyPath: m_Name
       value: wrist3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222823318986826638, guid: 8c8560bc7f4598645b9da705e44fdf77, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 89557810794904119, guid: 8c8560bc7f4598645b9da705e44fdf77, type: 3}
@@ -1290,6 +1314,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 211126562}
     m_Modifications:
+    - target: {fileID: -9140668773792115683, guid: 6575a3d8a52914046ad96737143bf1be, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6575a3d8a52914046ad96737143bf1be, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1330,9 +1358,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -349552454175595251, guid: 6575a3d8a52914046ad96737143bf1be, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6575a3d8a52914046ad96737143bf1be, type: 3}
       propertyPath: m_Name
       value: upperarm
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6575a3d8a52914046ad96737143bf1be, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3462330439559320591, guid: 6575a3d8a52914046ad96737143bf1be, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354044053864407465, guid: 6575a3d8a52914046ad96737143bf1be, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833828239794047570, guid: 6575a3d8a52914046ad96737143bf1be, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1354,7 +1402,7 @@ GameObject:
   m_Component:
   - component: {fileID: 254803835}
   - component: {fileID: 254803836}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1400,7 +1448,7 @@ GameObject:
   m_Component:
   - component: {fileID: 255042403}
   - component: {fileID: 255042404}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1446,7 +1494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 256065924}
   - component: {fileID: 256065925}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1489,6 +1537,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1317445874}
     m_Modifications:
+    - target: {fileID: 878608417304862104, guid: c4618558c9192c646a9e38bcb8ef88f6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3080783578029087833, guid: c4618558c9192c646a9e38bcb8ef88f6, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.000007
@@ -1540,6 +1592,10 @@ PrefabInstance:
     - target: {fileID: 7075160059115429232, guid: c4618558c9192c646a9e38bcb8ef88f6, type: 3}
       propertyPath: m_Name
       value: right_finger
+      objectReference: {fileID: 0}
+    - target: {fileID: 7075160059115429232, guid: c4618558c9192c646a9e38bcb8ef88f6, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 494703470557641781, guid: c4618558c9192c646a9e38bcb8ef88f6, type: 3}
@@ -1593,7 +1649,7 @@ GameObject:
   m_Component:
   - component: {fileID: 271269803}
   - component: {fileID: 271269804}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1677,9 +1733,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6057050173598897862, guid: f8baf85167f595f4a9a28f6a8e5affd5, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6849243265015047528, guid: f8baf85167f595f4a9a28f6a8e5affd5, type: 3}
       propertyPath: m_Name
       value: forearm
+      objectReference: {fileID: 0}
+    - target: {fileID: 6849243265015047528, guid: f8baf85167f595f4a9a28f6a8e5affd5, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6364964982761007264, guid: f8baf85167f595f4a9a28f6a8e5affd5, type: 3}
@@ -1808,7 +1872,7 @@ GameObject:
   m_Component:
   - component: {fileID: 289361824}
   - component: {fileID: 289361825}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1854,7 +1918,7 @@ GameObject:
   m_Component:
   - component: {fileID: 299839475}
   - component: {fileID: 299839476}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1899,7 +1963,7 @@ GameObject:
   m_Component:
   - component: {fileID: 308456514}
   - component: {fileID: 308456515}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1944,7 +2008,7 @@ GameObject:
   m_Component:
   - component: {fileID: 318829152}
   - component: {fileID: 318829153}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2126,7 +2190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 332922515}
   - component: {fileID: 332922516}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2171,7 +2235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 351760514}
   - component: {fileID: 351760515}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2217,7 +2281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 363121783}
   - component: {fileID: 363121784}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2261,7 +2325,7 @@ GameObject:
   m_Component:
   - component: {fileID: 372180227}
   - component: {fileID: 372180228}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2306,7 +2370,7 @@ GameObject:
   m_Component:
   - component: {fileID: 389488573}
   - component: {fileID: 389488574}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2354,7 +2418,7 @@ GameObject:
   - component: {fileID: 408141208}
   - component: {fileID: 408141207}
   - component: {fileID: 408141206}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: shoulder_link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2629,7 +2693,7 @@ GameObject:
   m_Component:
   - component: {fileID: 425595238}
   - component: {fileID: 425595239}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2675,7 +2739,7 @@ GameObject:
   - component: {fileID: 433065130}
   - component: {fileID: 433065129}
   - component: {fileID: 433065128}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: gripper_mount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2808,7 +2872,7 @@ GameObject:
   - component: {fileID: 450424962}
   - component: {fileID: 450424961}
   - component: {fileID: 450424960}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: robotiq_85_right_finger_tip_link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2958,7 +3022,7 @@ GameObject:
   - component: {fileID: 472522770}
   - component: {fileID: 472522769}
   - component: {fileID: 472522768}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: robotiq_85_left_finger_tip_link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3105,7 +3169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 475494103}
   - component: {fileID: 475494104}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3151,7 +3215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 475944107}
   - component: {fileID: 475944108}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plugins
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3195,7 +3259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 482990835}
   - component: {fileID: 482990836}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3239,7 +3303,7 @@ GameObject:
   m_Component:
   - component: {fileID: 499213233}
   - component: {fileID: 499213234}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3285,7 +3349,7 @@ GameObject:
   m_Component:
   - component: {fileID: 527019099}
   - component: {fileID: 527019100}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3327,9 +3391,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 626225923}
     m_Modifications:
+    - target: {fileID: 884586940105220920, guid: 8ecb315630c67f640a0fa8997951285a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7949283448264242655, guid: 8ecb315630c67f640a0fa8997951285a, type: 3}
       propertyPath: m_Name
       value: right_inner_knuckle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949283448264242655, guid: 8ecb315630c67f640a0fa8997951285a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8681533573981549881, guid: 8ecb315630c67f640a0fa8997951285a, type: 3}
       propertyPath: m_LocalScale.x
@@ -3421,6 +3493,146 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 537c563b9892f1141af54a4caf3d638c, type: 2}
+--- !u!1 &557538577
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 557538582}
+  - component: {fileID: 557538581}
+  - component: {fileID: 557538580}
+  - component: {fileID: 557538579}
+  - component: {fileID: 557538578}
+  m_Layer: 7
+  m_Name: Can
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!54 &557538578
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557538577}
+  serializedVersion: 5
+  m_Mass: 0.1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &557538579
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557538577}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2, z: 1.0000001}
+  m_Center: {x: 0.00000005960464, y: 0, z: -0.00000008940696}
+--- !u!23 &557538580
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557538577}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &557538581
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557538577}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &557538582
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557538577}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.6, y: 0.4843, z: 0.2}
+  m_LocalScale: {x: 0.066, y: 0.0575, z: 0.066}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &567714095
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3432,6 +3644,14 @@ PrefabInstance:
     - target: {fileID: 1738096464135754151, guid: d57d3df1e24a14d43b4b4a5b63abf60e, type: 3}
       propertyPath: m_Name
       value: left_finger
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738096464135754151, guid: d57d3df1e24a14d43b4b4a5b63abf60e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5051442146484507411, guid: d57d3df1e24a14d43b4b4a5b63abf60e, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9104733130895860133, guid: d57d3df1e24a14d43b4b4a5b63abf60e, type: 3}
       propertyPath: m_LocalScale.x
@@ -3533,7 +3753,7 @@ GameObject:
   m_Component:
   - component: {fileID: 569046194}
   - component: {fileID: 569046195}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3578,7 +3798,7 @@ GameObject:
   m_Component:
   - component: {fileID: 605870443}
   - component: {fileID: 605870444}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3666,6 +3886,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wrist3
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ef0bceb34184ef447bd3d518e919ea66, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3686,7 +3910,7 @@ GameObject:
   m_Component:
   - component: {fileID: 626225923}
   - component: {fileID: 626225924}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3870,7 +4094,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -3957,7 +4181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 694706906}
   - component: {fileID: 694706907}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4005,7 +4229,7 @@ GameObject:
   - component: {fileID: 748487873}
   - component: {fileID: 748487872}
   - component: {fileID: 748487871}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: flange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4137,7 +4361,7 @@ GameObject:
   - component: {fileID: 762130280}
   - component: {fileID: 762130279}
   - component: {fileID: 762130278}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ft_frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4266,7 +4490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 769566791}
   - component: {fileID: 769566792}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4311,7 +4535,7 @@ GameObject:
   m_Component:
   - component: {fileID: 791319159}
   - component: {fileID: 791319160}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4407,7 +4631,7 @@ GameObject:
   - component: {fileID: 794094120}
   - component: {fileID: 794094119}
   - component: {fileID: 794094118}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: robotiq_85_left_inner_knuckle_link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4603,7 +4827,7 @@ GameObject:
   m_Component:
   - component: {fileID: 834550871}
   - component: {fileID: 834550872}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4648,7 +4872,7 @@ GameObject:
   m_Component:
   - component: {fileID: 864448220}
   - component: {fileID: 864448221}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4693,7 +4917,7 @@ GameObject:
   m_Component:
   - component: {fileID: 891249393}
   - component: {fileID: 891249394}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4836,6 +5060,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: left_knuckle
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 94d6e1c724e9c6441ad29f41a5a6f848, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4856,7 +5084,7 @@ GameObject:
   m_Component:
   - component: {fileID: 942494668}
   - component: {fileID: 942494669}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4902,7 +5130,7 @@ GameObject:
   - component: {fileID: 942893812}
   - component: {fileID: 942893811}
   - component: {fileID: 942893810}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: base_link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5033,7 +5261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 944403201}
   - component: {fileID: 944403202}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5077,7 +5305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 949012402}
   - component: {fileID: 949012403}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5122,7 +5350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 951095798}
   - component: {fileID: 951095799}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5168,7 +5396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 958956880}
   - component: {fileID: 958956881}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5264,9 +5492,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -349552454175595251, guid: 4762ebda769df914e96dff32356d214c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4762ebda769df914e96dff32356d214c, type: 3}
       propertyPath: m_Name
       value: wrist1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4762ebda769df914e96dff32356d214c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354044053864407465, guid: 4762ebda769df914e96dff32356d214c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5290,7 +5530,7 @@ GameObject:
   - component: {fileID: 970004357}
   - component: {fileID: 970004356}
   - component: {fileID: 970004355}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tool0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5420,7 +5660,7 @@ GameObject:
   m_Component:
   - component: {fileID: 984465726}
   - component: {fileID: 984465727}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5465,7 +5705,7 @@ GameObject:
   m_Component:
   - component: {fileID: 995391754}
   - component: {fileID: 995391755}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5511,7 +5751,7 @@ GameObject:
   m_Component:
   - component: {fileID: 995689865}
   - component: {fileID: 995689866}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5594,9 +5834,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6365708518016419911, guid: 0aacaa1ae6bc679478c63c6c4fb857b0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7888277019669101180, guid: 0aacaa1ae6bc679478c63c6c4fb857b0, type: 3}
       propertyPath: m_Name
       value: wrist2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888277019669101180, guid: 0aacaa1ae6bc679478c63c6c4fb857b0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2599928124651656191, guid: 0aacaa1ae6bc679478c63c6c4fb857b0, type: 3}
@@ -5700,6 +5948,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ur_to_robotiq_adapter
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6807a1609af9c224cb16bbd5bec28c2c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5710,6 +5962,96 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6807a1609af9c224cb16bbd5bec28c2c, type: 3}
   m_PrefabInstance: {fileID: 1028573398}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1031858896
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1031858899}
+  - component: {fileID: 1031858898}
+  - component: {fileID: 1031858897}
+  m_Layer: 0
+  m_Name: PickPlace
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1031858897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031858896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 677b8ccbe9e047f4eb89fae9ca7f8014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickPlaceSequence
+  serviceName: plan_to_pose
+  robotRoot: {fileID: 2114436389}
+  gripper: {fileID: 1031858898}
+  gripperAttachPoint: {fileID: 1946274624}
+  can: {fileID: 557538582}
+  placeTarget: {fileID: 1871590626}
+  approachHeight: 0.12
+  graspEulerDown: {x: 90, y: 0, z: 0}
+  graspClosure: 0.55
+  pointDwell: 0.05
+  settleWait: 0.3
+  stiffness: 10000
+  damping: 100
+  forceLimit: 1000
+--- !u!114 &1031858898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031858896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cd9b66b5eefad34f87b3bb894c5c989, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GripperController
+  robotRoot: {fileID: 2114436389}
+  closedAngleRad: 0.8
+  moveDuration: 0.5
+  stiffness: 3000
+  damping: 100
+  forceLimit: 1000
+  gripperJoints:
+  - linkName: robotiq_85_left_knuckle_link
+    multiplier: 1
+  - linkName: robotiq_85_right_knuckle_link
+    multiplier: -1
+  - linkName: robotiq_85_left_inner_knuckle_link
+    multiplier: 1
+  - linkName: robotiq_85_right_inner_knuckle_link
+    multiplier: -1
+  - linkName: robotiq_85_left_finger_tip_link
+    multiplier: -1
+  - linkName: robotiq_85_right_finger_tip_link
+    multiplier: 1
+--- !u!4 &1031858899
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031858896}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1034576525
 GameObject:
   m_ObjectHideFlags: 0
@@ -5720,7 +6062,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1034576526}
   - component: {fileID: 1034576527}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5766,7 +6108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1060836367}
   - component: {fileID: 1060836368}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5812,7 +6154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1067044164}
   - component: {fileID: 1067044165}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: world
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5860,7 +6202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1068011216}
   - component: {fileID: 1068011217}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5941,7 +6283,7 @@ GameObject:
   - component: {fileID: 1134724098}
   - component: {fileID: 1134724097}
   - component: {fileID: 1134724096}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wrist_2_link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6089,7 +6431,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1151460586}
   - component: {fileID: 1151460587}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6131,9 +6473,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 351760514}
     m_Modifications:
+    - target: {fileID: 3921282128947923976, guid: b6b5a1ee1b942534e8426127c2138a24, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8029212843462871342, guid: b6b5a1ee1b942534e8426127c2138a24, type: 3}
       propertyPath: m_Name
       value: upperarm
+      objectReference: {fileID: 0}
+    - target: {fileID: 8029212843462871342, guid: b6b5a1ee1b942534e8426127c2138a24, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9141909289918955704, guid: b6b5a1ee1b942534e8426127c2138a24, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6277,7 +6627,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1162471365}
   - component: {fileID: 1162471366}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6372,9 +6722,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -349552454175595251, guid: 5a0624490c7fdb047ade720dd1904620, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5a0624490c7fdb047ade720dd1904620, type: 3}
       propertyPath: m_Name
       value: wrist2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5a0624490c7fdb047ade720dd1904620, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354044053864407465, guid: 5a0624490c7fdb047ade720dd1904620, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6394,6 +6756,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1234909464}
     m_Modifications:
+    - target: {fileID: 4284789637565414905, guid: 26f1c17a7e11bdb439d5d37097717432, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4925782786790716864, guid: 26f1c17a7e11bdb439d5d37097717432, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.0000018
@@ -6445,6 +6811,10 @@ PrefabInstance:
     - target: {fileID: 8556369801857541768, guid: 26f1c17a7e11bdb439d5d37097717432, type: 3}
       propertyPath: m_Name
       value: robotiq_base
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556369801857541768, guid: 26f1c17a7e11bdb439d5d37097717432, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8695074121840475108, guid: 26f1c17a7e11bdb439d5d37097717432, type: 3}
@@ -6501,7 +6871,7 @@ GameObject:
   - component: {fileID: 1185571844}
   - component: {fileID: 1185571843}
   - component: {fileID: 1185571842}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: robotiq_85_left_knuckle_link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6652,7 +7022,7 @@ GameObject:
   - component: {fileID: 1191387842}
   - component: {fileID: 1191387841}
   - component: {fileID: 1191387840}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wrist_1_link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6803,7 +7173,7 @@ GameObject:
   - component: {fileID: 1197486028}
   - component: {fileID: 1197486027}
   - component: {fileID: 1197486026}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: robotiq_85_right_inner_knuckle_link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6948,6 +7318,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 475494103}
     m_Modifications:
+    - target: {fileID: 848568893636837726, guid: f8fbfe888e75bc74184a0964d848add6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5622054675831573777, guid: f8fbfe888e75bc74184a0964d848add6, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.000014
@@ -6999,6 +7373,10 @@ PrefabInstance:
     - target: {fileID: 6606953642369218225, guid: f8fbfe888e75bc74184a0964d848add6, type: 3}
       propertyPath: m_Name
       value: right_finger_tip
+      objectReference: {fileID: 0}
+    - target: {fileID: 6606953642369218225, guid: f8fbfe888e75bc74184a0964d848add6, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5175504476768573207, guid: f8fbfe888e75bc74184a0964d848add6, type: 3}
@@ -7102,6 +7480,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: left_finger
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1bb84bee1032ebf438cf9e57cf1c7ef5, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7122,7 +7504,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1234909464}
   - component: {fileID: 1234909465}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7206,9 +7588,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -349552454175595251, guid: bc75e458f5749854396597642e55e415, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bc75e458f5749854396597642e55e415, type: 3}
       propertyPath: m_Name
       value: shoulder
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bc75e458f5749854396597642e55e415, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354044053864407465, guid: bc75e458f5749854396597642e55e415, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7280,6 +7674,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: right_inner_knuckle
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3d7e07fa6aec5014d98a58ef84d1186a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7300,7 +7698,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1317445874}
   - component: {fileID: 1317445875}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7346,7 +7744,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1333234133}
   - component: {fileID: 1333234134}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7391,7 +7789,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1337862304}
   - component: {fileID: 1337862305}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7436,7 +7834,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1357034672}
   - component: {fileID: 1357034673}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7479,6 +7877,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 958956880}
     m_Modifications:
+    - target: {fileID: 1819467236526651131, guid: 116748b1658029043b35c6acb134ac5d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7639244798608127180, guid: 116748b1658029043b35c6acb134ac5d, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.0000035
@@ -7530,6 +7932,10 @@ PrefabInstance:
     - target: {fileID: 8341482309040162627, guid: 116748b1658029043b35c6acb134ac5d, type: 3}
       propertyPath: m_Name
       value: left_inner_knuckle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8341482309040162627, guid: 116748b1658029043b35c6acb134ac5d, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4110708846678202923, guid: 116748b1658029043b35c6acb134ac5d, type: 3}
@@ -7586,7 +7992,7 @@ GameObject:
   - component: {fileID: 1360379616}
   - component: {fileID: 1360379615}
   - component: {fileID: 1360379614}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: robotiq_85_right_finger_link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7735,6 +8141,14 @@ PrefabInstance:
     - target: {fileID: 2561414044091501433, guid: d9fc7a27f7520f546b21efa72ff6fa46, type: 3}
       propertyPath: m_Name
       value: ur_to_robotiq_adapter
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561414044091501433, guid: d9fc7a27f7520f546b21efa72ff6fa46, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975815312112605675, guid: d9fc7a27f7520f546b21efa72ff6fa46, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9001000513438514415, guid: d9fc7a27f7520f546b21efa72ff6fa46, type: 3}
       propertyPath: m_LocalScale.x
@@ -7886,6 +8300,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: right_finger_tip
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: be32181d8cdb4154b9287ffbd341e91c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7906,7 +8324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1402267851}
   - component: {fileID: 1402267852}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7950,7 +8368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1402442786}
   - component: {fileID: 1402442787}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7995,7 +8413,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1418782020}
   - component: {fileID: 1418782021}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8040,7 +8458,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1420074124}
   - component: {fileID: 1420074125}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8134,6 +8552,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: left_inner_knuckle
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 957929f8fa7eab142a266d870cde14eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8154,7 +8576,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1452982415}
   - component: {fileID: 1452982416}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8198,7 +8620,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1472302497}
   - component: {fileID: 1472302498}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8293,7 +8715,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1546715761}
   - component: {fileID: 1546715762}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8339,6 +8761,10 @@ PrefabInstance:
     - target: {fileID: 1979256169435509926, guid: 06b938cd9bf35884487aeba0c75c83f4, type: 3}
       propertyPath: m_Name
       value: right_knuckle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1979256169435509926, guid: 06b938cd9bf35884487aeba0c75c83f4, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4233102593074563871, guid: 06b938cd9bf35884487aeba0c75c83f4, type: 3}
       propertyPath: m_LocalScale.x
@@ -8387,6 +8813,10 @@ PrefabInstance:
     - target: {fileID: 4233102593074563871, guid: 06b938cd9bf35884487aeba0c75c83f4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861746972977690832, guid: 06b938cd9bf35884487aeba0c75c83f4, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7266933658873587705, guid: 06b938cd9bf35884487aeba0c75c83f4, type: 3}
@@ -8440,7 +8870,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1565603326}
   - component: {fileID: 1565603327}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8536,6 +8966,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: robotiq_base
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d2b9c72d77559d14597bee91b25b0f04, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8556,7 +8990,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1583445436}
   - component: {fileID: 1583445437}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8641,6 +9075,14 @@ PrefabInstance:
     - target: {fileID: 2778546893622634426, guid: f8b96215663f7cb40bcc780d18a7bd5f, type: 3}
       propertyPath: m_Name
       value: base
+      objectReference: {fileID: 0}
+    - target: {fileID: 2778546893622634426, guid: f8b96215663f7cb40bcc780d18a7bd5f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3888842063598803443, guid: f8b96215663f7cb40bcc780d18a7bd5f, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6120885335786699640, guid: f8b96215663f7cb40bcc780d18a7bd5f, type: 3}
@@ -8806,7 +9248,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1639924443}
   - component: {fileID: 1639924444}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8852,7 +9294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1640882348}
   - component: {fileID: 1640882349}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8894,6 +9336,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1060836367}
     m_Modifications:
+    - target: {fileID: 5121225891609346386, guid: 69a88c12718e7e445a5b985bab28b69f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6445107894959424086, guid: 69a88c12718e7e445a5b985bab28b69f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -8937,6 +9383,10 @@ PrefabInstance:
     - target: {fileID: 7090890106233223256, guid: 69a88c12718e7e445a5b985bab28b69f, type: 3}
       propertyPath: m_Name
       value: shoulder
+      objectReference: {fileID: 0}
+    - target: {fileID: 7090890106233223256, guid: 69a88c12718e7e445a5b985bab28b69f, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7772826640245890334, guid: 69a88c12718e7e445a5b985bab28b69f, type: 3}
@@ -8990,7 +9440,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1676829841}
   - component: {fileID: 1676829842}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9148,7 +9598,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1732082844}
   - component: {fileID: 1732082845}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9195,7 +9645,7 @@ GameObject:
   - component: {fileID: 1745430695}
   - component: {fileID: 1745430694}
   - component: {fileID: 1745430693}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9374,9 +9824,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7225362664746354813, guid: f0e72ac29ded7104fb6ddb52337a89ba, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -349552454175595251, guid: f0e72ac29ded7104fb6ddb52337a89ba, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f0e72ac29ded7104fb6ddb52337a89ba, type: 3}
       propertyPath: m_Name
       value: forearm
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f0e72ac29ded7104fb6ddb52337a89ba, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3462330439559320591, guid: f0e72ac29ded7104fb6ddb52337a89ba, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833828239794047570, guid: f0e72ac29ded7104fb6ddb52337a89ba, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9448,6 +9918,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: right_finger
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 41b4f51c57ef2f846b30a3f63eaf3272, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9468,7 +9942,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1775192471}
   - component: {fileID: 1775192472}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9514,7 +9988,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1781577159}
   - component: {fileID: 1781577160}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9609,7 +10083,7 @@ GameObject:
   - component: {fileID: 1824191367}
   - component: {fileID: 1824191366}
   - component: {fileID: 1824191365}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: base_link_inertia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9760,7 +10234,7 @@ GameObject:
   - component: {fileID: 1830743382}
   - component: {fileID: 1830743381}
   - component: {fileID: 1830743380}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wrist_3_link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9909,7 +10383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1832356992}
   - component: {fileID: 1832356993}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9955,7 +10429,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1836184648}
   - component: {fileID: 1836184649}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10000,7 +10474,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1845000253}
   - component: {fileID: 1845000254}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10044,7 +10518,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1858107719}
   - component: {fileID: 1858107720}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10090,7 +10564,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1865159495}
   - component: {fileID: 1865159496}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10126,6 +10600,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.Robotics.UrdfImporter::Unity.Robotics.UrdfImporter.UrdfVisual
   geometryType: 3
+--- !u!1 &1871590625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1871590626}
+  m_Layer: 0
+  m_Name: PlaceTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1871590626
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871590625}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.6, y: 0.467, z: -0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1909292344
 GameObject:
   m_ObjectHideFlags: 8
@@ -10136,7 +10641,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1909292345}
   - component: {fileID: 1909292346}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10171,6 +10676,118 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46398bc5d6905ad429a6d2d973afe002, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Robotics.UrdfImporter::Unity.Robotics.UrdfImporter.UrdfCollisions
+--- !u!1 &1937491896
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1937491900}
+  - component: {fileID: 1937491899}
+  - component: {fileID: 1937491898}
+  - component: {fileID: 1937491897}
+  m_Layer: 7
+  m_Name: Table
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1937491897
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937491896}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1937491898
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937491896}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1937491899
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937491896}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1937491900
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937491896}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.417, y: 0.4, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.05, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1944830963
 GameObject:
   m_ObjectHideFlags: 0
@@ -10184,7 +10801,7 @@ GameObject:
   - component: {fileID: 1944830967}
   - component: {fileID: 1944830966}
   - component: {fileID: 1944830965}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: upper_arm_link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10335,7 +10952,7 @@ GameObject:
   - component: {fileID: 1946274627}
   - component: {fileID: 1946274626}
   - component: {fileID: 1946274625}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: robotiq_85_base_link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10486,7 +11103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1946863271}
   - component: {fileID: 1946863272}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10531,7 +11148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1947932740}
   - component: {fileID: 1947932741}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10576,7 +11193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1948503780}
   - component: {fileID: 1948503781}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10622,7 +11239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1983054910}
   - component: {fileID: 1983054911}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10709,6 +11326,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: base
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d7a104fca673ee442b2be754ed1a8732, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10732,7 +11353,7 @@ GameObject:
   - component: {fileID: 2002493909}
   - component: {fileID: 2002493908}
   - component: {fileID: 2002493907}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: robotiq_85_right_knuckle_link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10883,7 +11504,7 @@ GameObject:
   - component: {fileID: 2039127970}
   - component: {fileID: 2039127969}
   - component: {fileID: 2039127968}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: robotiq_85_left_finger_link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11031,7 +11652,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2043405196}
   - component: {fileID: 2043405197}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11077,7 +11698,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2069155180}
   - component: {fileID: 2069155181}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11164,6 +11785,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: wrist1
       objectReference: {fileID: 0}
+    - target: {fileID: 5988477484634170233, guid: 4697a14de4bcd004f8fb0ecfc55729a9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6572290789307569938, guid: 4697a14de4bcd004f8fb0ecfc55729a9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6558896970117664877, guid: 4697a14de4bcd004f8fb0ecfc55729a9, type: 3}
     - {fileID: 4385635279741136835, guid: 4697a14de4bcd004f8fb0ecfc55729a9, type: 3}
@@ -11216,7 +11845,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2114436389}
   - component: {fileID: 2114436388}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ur5_robotiq
   m_TagString: robot
   m_Icon: {fileID: 0}
@@ -11266,7 +11895,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2117481046}
   - component: {fileID: 2117481047}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11311,7 +11940,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2134810802}
   - component: {fileID: 2134810803}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11355,9 +11984,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 891249393}
     m_Modifications:
+    - target: {fileID: 4959866122053456640, guid: 9cc96dad54b61ad4fbbe098d49acc112, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7910441453949890368, guid: 9cc96dad54b61ad4fbbe098d49acc112, type: 3}
       propertyPath: m_Name
       value: left_finger_tip
+      objectReference: {fileID: 0}
+    - target: {fileID: 7910441453949890368, guid: 9cc96dad54b61ad4fbbe098d49acc112, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8063661823549135586, guid: 9cc96dad54b61ad4fbbe098d49acc112, type: 3}
       propertyPath: m_LocalScale.x
@@ -11467,3 +12104,7 @@ SceneRoots:
   - {fileID: 1487428554}
   - {fileID: 104004340}
   - {fileID: 182926274}
+  - {fileID: 1937491900}
+  - {fileID: 557538582}
+  - {fileID: 1871590626}
+  - {fileID: 1031858899}
