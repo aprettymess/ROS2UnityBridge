@@ -1,0 +1,284 @@
+<?xml version="1.0"?>
+<robot name="firefighter">
+
+  <link name="base">
+    <visual>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/base.dae"/></geometry>
+      <origin xyz="0 0 0" rpy="0 0 1.5708"/>
+    </visual>
+    <collision>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/collision/base_hull.stl"/></geometry>
+      <origin xyz="0 0 0" rpy="0 0 1.5708"/>
+    </collision>
+    <inertial>
+      <origin xyz="-0.01747 0.00016 0.04706" rpy="0 0 1.5708"/>
+      <mass value="0.9831"/>
+      <inertia ixx="0.00229322" ixy="0.00000063" ixz="-0.00000001" iyy="0.00157741" iyz="0.00002770" izz="0.00232150"/>
+    </inertial>
+  </link>
+
+  <link name="link1">
+    <visual>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/link1.dae"/></geometry>
+      <origin xyz="0 0 -0.078" rpy="0 0 1.5708"/>
+    </visual>
+    <collision>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/collision/link1_hull.stl"/></geometry>
+      <origin xyz="0 0 -0.078" rpy="0 0 1.5708"/>
+    </collision>
+    <inertial>
+      <origin xyz="-0.00005 -0.01649 -0.01955" rpy="0 0 1.5708"/>
+      <mass value="0.5095"/>
+      <inertia ixx="0.00065938" ixy="0.00000000" ixz="0.00009572" iyy="0.00086617" iyz="0.00000000" izz="0.00058760"/>
+    </inertial>
+  </link>
+
+  <link name="link2">
+    <visual>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/link2.dae"/></geometry>
+      <origin xyz="0 0 -0.04" rpy="0 1.5708 0"/>
+    </visual>
+    <collision>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/collision/link2_hull.stl"/></geometry>
+      <origin xyz="0 0 -0.04" rpy="0 1.5708 0"/>
+    </collision>
+    <inertial>
+      <origin xyz="0.06966 0.00031 -0.01502" rpy="0 1.5708 0"/>
+      <mass value="0.7560"/>
+      <inertia ixx="0.00244821" ixy="0.00000001" ixz="-0.00014800" iyy="0.00258829" iyz="0.00000003" izz="0.00069959"/>
+    </inertial>
+  </link>
+
+  <link name="link3">
+    <visual>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/link3.dae"/></geometry>
+      <origin xyz="0 0 0.039" rpy="1.5708 1.5708 1.5708"/>
+    </visual>
+    <collision>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/collision/link3_hull.stl"/></geometry>
+      <origin xyz="0 0 0.039" rpy="1.5708 1.5708 1.5708"/>
+    </collision>
+    <inertial>
+      <origin xyz="0.05829 0.00028 0.00816" rpy="1.5708 1.5708 1.5708"/>
+      <mass value="0.5549"/>
+      <inertia ixx="0.00142464" ixy="0.00000000" ixz="0.00001895" iyy="0.00152326" iyz="0.00000000" izz="0.00042029"/>
+    </inertial>
+  </link>
+
+  <link name="link4">
+    <visual>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/link4.dae"/></geometry>
+      <origin xyz="0 -0.0024 -0.05" rpy="1.5708 1.5708 0"/>
+    </visual>
+    <collision>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/collision/link4_hull.stl"/></geometry>
+      <origin xyz="0 -0.0024 -0.05" rpy="1.5708 1.5708 0"/>
+    </collision>
+    <inertial>
+      <origin xyz="-0.00002 -0.01347 -0.01229" rpy="1.5708 1.5708 0"/>
+      <mass value="0.2008"/>
+      <inertia ixx="0.00013797" ixy="0.00000000" ixz="0.00002394" iyy="0.00017432" iyz="0.00000000" izz="0.00012593"/>
+    </inertial>
+  </link>
+
+  <link name="link5">
+    <visual>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/link5.dae"/></geometry>
+      <origin xyz="0 0 -0.05" rpy="0 0 -1.5708"/>
+    </visual>
+    <collision>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/collision/link5_hull.stl"/></geometry>
+      <origin xyz="0 0 -0.05" rpy="0 0 -1.5708"/>
+    </collision>
+    <inertial>
+      <origin xyz="-0.00004 0.00272 -0.00952" rpy="0 0 -1.5708"/>
+      <mass value="0.2597"/>
+      <inertia ixx="0.00016771" ixy="0.00000000" ixz="0.00000595" iyy="0.00029046" iyz="0.00000000" izz="0.00024458"/>
+    </inertial>
+  </link>
+
+  <link name="link6">
+    <visual>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/link6.dae"/></geometry>
+      <origin xyz="0 0 -0.022" rpy="1.5708 1.5708 0"/>
+    </visual>
+    <collision>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/collision/link6_hull.stl"/></geometry>
+      <origin xyz="0 0 -0.022" rpy="1.5708 1.5708 0"/>
+    </collision>
+    <inertial>
+      <origin xyz="0.00010 -0.00021 -0.01222" rpy="1.5708 1.5708 0"/>
+      <mass value="0.0358"/>
+      <inertia ixx="0.00001499" ixy="0.00000000" ixz="0.00000000" iyy="0.00000858" iyz="0.00000000" izz="0.00000858"/>
+    </inertial>
+  </link>
+
+  <joint name="joint2_to_joint1" type="revolute">
+    <axis xyz="0 0 1"/><limit effort="1000.0" lower="-2.93" upper="2.93" velocity="3.14"/>
+    <parent link="base"/><child link="link1"/><origin xyz="0 0 0.1739" rpy="0 0 0"/>
+  </joint>
+  <joint name="joint3_to_joint2" type="revolute">
+    <axis xyz="0 0 1"/><limit effort="1000.0" lower="-2.35" upper="2.35" velocity="3.14"/>
+    <parent link="link1"/><child link="link2"/><origin xyz="0 -0.08878 0" rpy="0 -1.5708 1.5708"/>
+  </joint>
+  <joint name="joint4_to_joint3" type="revolute">
+    <axis xyz="0 0 1"/><limit effort="1000.0" lower="-2.53" upper="2.53" velocity="3.14"/>
+    <parent link="link2"/><child link="link3"/><origin xyz="0.135 0 -0.08878" rpy="0 0 0"/>
+  </joint>
+  <joint name="joint5_to_joint4" type="revolute">
+    <axis xyz="0 0 1"/><limit effort="1000.0" lower="-2.53" upper="2.53" velocity="3.14"/>
+    <parent link="link3"/><child link="link4"/><origin xyz="0.120 0 0.08878" rpy="0 0 1.5708"/>
+  </joint>
+  <joint name="joint6_to_joint5" type="revolute">
+    <axis xyz="0 0 1"/><limit effort="1000.0" lower="-2.93" upper="2.93" velocity="3.14"/>
+    <parent link="link4"/><child link="link5"/><origin xyz="0 -0.095 0" rpy="1.5708 0 0"/>
+  </joint>
+  <joint name="joint6output_to_joint6" type="revolute">
+    <axis xyz="0 0 1"/><limit effort="1000.0" lower="-3.14" upper="3.14" velocity="3.14"/>
+    <parent link="link5"/><child link="link6"/><origin xyz="0 0.0655 0" rpy="-1.5708 0 0"/>
+  </joint>
+
+  <!-- ============ GRIPPER (vendor geometry, defects fixed) ============ -->
+
+  <link name="gripper_connection">
+    <visual>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/force_control_gripper/mygripper_f100_connection.dae"/></geometry>
+      <origin xyz="-0.03 0.014 0" rpy="0 0 -1.5708"/>
+    </visual>
+    <collision>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/force_control_gripper/collision/mygripper_f100_connection_hull.stl"/></geometry>
+      <origin xyz="-0.03 0.014 0" rpy="0 0 -1.5708"/>
+    </collision>
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.0408"/>
+      <inertia ixx="0.00000631" ixy="0" ixz="0" iyy="0.00000631" iyz="0" izz="0.00001088"/></inertial>
+  </link>
+
+  <link name="gripper_base">
+    <visual>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/force_control_gripper/pro_gripper_base.dae"/></geometry>
+      <origin xyz="-0.107 0.012 0.0" rpy="1.5708 0 1.5708"/>
+    </visual>
+    <collision>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/force_control_gripper/collision/pro_gripper_base_hull.stl"/></geometry>
+      <origin xyz="-0.107 0.012 0.0" rpy="1.5708 0 1.5708"/>
+    </collision>
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.0714"/>
+      <inertia ixx="0.00003095" ixy="0" ixz="0" iyy="0.00003095" iyz="0" izz="0.00004286"/></inertial>
+  </link>
+
+  <link name="gripper_left1">
+    <visual>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/force_control_gripper/pro_gripper_left1.dae"/></geometry>
+      <origin xyz="-0.047 -0.013 0.044" rpy="1.5708 0 1.5708"/>
+    </visual>
+    <collision>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/force_control_gripper/collision/pro_gripper_left1_hull.stl"/></geometry>
+      <origin xyz="-0.047 -0.013 0.044" rpy="1.5708 0 1.5708"/>
+    </collision>
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.0163"/>
+      <inertia ixx="0.00000231" ixy="0" ixz="0" iyy="0.00000136" iyz="0" izz="0.00000340"/></inertial>
+  </link>
+
+  <link name="gripper_left2">
+    <visual>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/force_control_gripper/pro_gripper_left2.dae"/></geometry>
+      <origin xyz="-0.0 0.03 0.004" rpy="3.14159 0 1.5708"/>
+    </visual>
+    <collision>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/force_control_gripper/collision/pro_gripper_left2_hull.stl"/></geometry>
+      <origin xyz="-0.0 0.03 0.004" rpy="3.14159 0 1.5708"/>
+    </collision>
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.0092"/>
+      <inertia ixx="0.00000074" ixy="0" ixz="0" iyy="0.00000036" iyz="0" izz="0.00000099"/></inertial>
+  </link>
+
+  <link name="gripper_left3">
+    <visual>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/force_control_gripper/pro_gripper_left3.dae"/></geometry>
+      <origin xyz="0 -0.03 0.012" rpy="1.5708 3.14159 1.5708"/>
+    </visual>
+    <collision>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/force_control_gripper/collision/pro_gripper_left3_hull.stl"/></geometry>
+      <origin xyz="0 -0.03 0.012" rpy="1.5708 3.14159 1.5708"/>
+    </collision>
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.0184"/>
+      <inertia ixx="0.00000573" ixy="0" ixz="0" iyy="0.00000267" iyz="0" izz="0.00000796"/></inertial>
+  </link>
+
+  <link name="gripper_right1">
+    <visual>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/force_control_gripper/pro_gripper_right1.dae"/></geometry>
+      <origin xyz="0.047 -0.013 -0.046" rpy="1.5708 3.14 -1.5708"/>
+    </visual>
+    <collision>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/force_control_gripper/collision/pro_gripper_right1_hull.stl"/></geometry>
+      <origin xyz="0.047 -0.013 -0.046" rpy="1.5708 3.14 -1.5708"/>
+    </collision>
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.0163"/>
+      <inertia ixx="0.00000231" ixy="0" ixz="0" iyy="0.00000136" iyz="0" izz="0.00000340"/></inertial>
+  </link>
+
+  <link name="gripper_right2">
+    <visual>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/force_control_gripper/pro_gripper_right2.dae"/></geometry>
+      <origin xyz="0 0.03 -0.005" rpy="0 0 1.5708"/>
+    </visual>
+    <collision>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/force_control_gripper/collision/pro_gripper_right2_hull.stl"/></geometry>
+      <origin xyz="0 0.03 -0.005" rpy="0 0 1.5708"/>
+    </collision>
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.0092"/>
+      <inertia ixx="0.00000074" ixy="0" ixz="0" iyy="0.00000036" iyz="0" izz="0.00000099"/></inertial>
+  </link>
+
+  <link name="gripper_right3">
+    <visual>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/force_control_gripper/pro_gripper_right3.dae"/></geometry>
+      <origin xyz="-0.014 -0.029 0.004" rpy="3.14 0 -1.5708"/>
+    </visual>
+    <collision>
+      <geometry><mesh filename="meshes/mycobot_320_pi_2022/force_control_gripper/collision/pro_gripper_right3_hull.stl"/></geometry>
+      <origin xyz="-0.014 -0.029 0.004" rpy="3.14 0 -1.5708"/>
+    </collision>
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.0184"/>
+      <inertia ixx="0.00000573" ixy="0" ixz="0" iyy="0.00000267" iyz="0" izz="0.00000796"/></inertial>
+  </link>
+
+  <joint name="joint6output_to_gripper_connect" type="fixed">
+    <parent link="link6"/><child link="gripper_connection"/><origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="joint6output_to_gripper_base" type="fixed">
+    <parent link="gripper_connection"/><child link="gripper_base"/><origin xyz="0 -0.02 0.0364" rpy="1.5708 0 0"/>
+  </joint>
+
+  <joint name="gripper_controller" type="revolute">
+    <axis xyz="0 0 1"/><limit effort="1000.0" lower="0" upper="1" velocity="1.0"/>
+    <parent link="gripper_base"/><child link="gripper_left3"/><origin xyz="-0.018 0.016 -0.02" rpy="0 0 0"/>
+  </joint>
+  <joint name="gripper_base_to_gripper_left2" type="revolute">
+    <axis xyz="0 0 1"/><limit effort="1000.0" lower="-0.8" upper="0.5" velocity="1.0"/>
+    <parent link="gripper_base"/><child link="gripper_left2"/><origin xyz="-0.0445 -0.004 -0.02" rpy="0 0 0"/>
+    <mimic joint="gripper_controller" multiplier="1.0" offset="0"/>
+  </joint>
+  <joint name="gripper_left3_to_gripper_left1" type="revolute">
+    <axis xyz="0 0 1"/><limit effort="1000.0" lower="-0.5" upper="0.5" velocity="1.0"/>
+    <parent link="gripper_left3"/><child link="gripper_left1"/><origin xyz="0.01 0.06 0.0" rpy="0 0 0"/>
+    <mimic joint="gripper_controller" multiplier="-1.0" offset="0"/>
+  </joint>
+  <joint name="gripper_base_to_gripper_right3" type="revolute">
+    <axis xyz="0 0 1"/><limit effort="1000.0" lower="-0.3" upper="0.7" velocity="1.0"/>
+    <parent link="gripper_base"/><child link="gripper_right3"/><origin xyz="0.018 0.015 -0.0212" rpy="0 0 0"/>
+    <mimic joint="gripper_controller" multiplier="-1.0" offset="0"/>
+  </joint>
+  <joint name="gripper_base_to_gripper_right2" type="revolute">
+    <axis xyz="0 0 1"/><limit effort="1000.0" lower="-0.5" upper="0.8" velocity="1.0"/>
+    <parent link="gripper_base"/><child link="gripper_right2"/><origin xyz="0.0442 -0.004 -0.02" rpy="0 0 0"/>
+    <mimic joint="gripper_controller" multiplier="-1.0" offset="0"/>
+  </joint>
+  <joint name="gripper_right3_to_gripper_right1" type="revolute">
+    <axis xyz="0 0 1"/><limit effort="1000.0" lower="-0.5" upper="0.5" velocity="1.0"/>
+    <parent link="gripper_right3"/><child link="gripper_right1"/><origin xyz="-0.01 0.061 0.001" rpy="0 0 0"/>
+    <mimic joint="gripper_controller" multiplier="1.0" offset="0"/>
+  </joint>
+
+</robot>
