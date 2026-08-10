@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<robot name="firefighter">
+
+  <link name="base">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/mycobot_320_pi_2022/base.dae"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 1.5708"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/mycobot_320_pi_2022/collision/base_hull.stl"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 1.5708"/>
+    </collision>
+    <inertial>
+      <origin xyz="-0.01747 0.00016 0.04706" rpy="0 0 1.5708"/>
+      <mass value="0.9831"/>
+      <inertia ixx="0.00229322" ixy="0.00000063" ixz="-0.00000001" iyy="0.00157741" iyz="0.00002770" izz="0.00232150"/>
+    </inertial>
+  </link>
+
+  <link name="link1">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/mycobot_320_pi_2022/link1.dae"/>
+      </geometry>
+      <origin xyz="0 0 -0.078" rpy="0 0 1.5708"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/mycobot_320_pi_2022/collision/link1_hull.stl"/>
+      </geometry>
+      <origin xyz="0 0 -0.078" rpy="0 0 1.5708"/>
+    </collision>
+    <inertial>
+      <origin xyz="-0.00005 -0.01649 -0.01955" rpy="0 0 1.5708"/>
+      <mass value="0.5095"/>
+      <inertia ixx="0.00065938" ixy="0.00000000" ixz="0.00009572" iyy="0.00086617" iyz="0.00000000" izz="0.00058760"/>
+    </inertial>
+  </link>
+
+  <link name="link2">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/mycobot_320_pi_2022/link2.dae"/>
+      </geometry>
+      <origin xyz="0 0 -0.04" rpy="0 1.5708 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/mycobot_320_pi_2022/collision/link2_hull.stl"/>
+      </geometry>
+      <origin xyz="0 0 -0.04" rpy="0 1.5708 0"/>
+    </collision>
+    <inertial>
+      <origin xyz="0.06966 0.00031 -0.01502" rpy="0 1.5708 0"/>
+      <mass value="0.7560"/>
+      <inertia ixx="0.00244821" ixy="0.00000001" ixz="-0.00014800" iyy="0.00258829" iyz="0.00000003" izz="0.00069959"/>
+    </inertial>
+  </link>
+
+  <link name="link3">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/mycobot_320_pi_2022/link3.dae"/>
+      </geometry>
+      <origin xyz="0 0 0.039" rpy="1.5708 1.5708 1.5708"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/mycobot_320_pi_2022/collision/link3_hull.stl"/>
+      </geometry>
+      <origin xyz="0 0 0.039" rpy="1.5708 1.5708 1.5708"/>
+    </collision>
+    <inertial>
+      <origin xyz="0.05829 0.00028 0.00816" rpy="1.5708 1.5708 1.5708"/>
+      <mass value="0.5549"/>
+      <inertia ixx="0.00142464" ixy="0.00000000" ixz="0.00001895" iyy="0.00152326" iyz="0.00000000" izz="0.00042029"/>
+    </inertial>
+  </link>
+
+  <link name="link4">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/mycobot_320_pi_2022/link4.dae"/>
+      </geometry>
+      <origin xyz="0 -0.0024 -0.05" rpy="1.5708 1.5708 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/mycobot_320_pi_2022/collision/link4_hull.stl"/>
+      </geometry>
+      <origin xyz="0 -0.0024 -0.05" rpy="1.5708 1.5708 0"/>
+    </collision>
+    <inertial>
+      <origin xyz="-0.00002 -0.01347 -0.01229" rpy="1.5708 1.5708 0"/>
+      <mass value="0.2008"/>
+      <inertia ixx="0.00013797" ixy="0.00000000" ixz="0.00002394" iyy="0.00017432" iyz="0.00000000" izz="0.00012593"/>
+    </inertial>
+  </link>
+
+  <link name="link5">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/mycobot_320_pi_2022/link5.dae"/>
+      </geometry>
+      <origin xyz="0 0 -0.05" rpy="0 0 -1.5708"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/mycobot_320_pi_2022/collision/link5_hull.stl"/>
+      </geometry>
+      <origin xyz="0 0 -0.05" rpy="0 0 -1.5708"/>
+    </collision>
+    <inertial>
+      <origin xyz="-0.00004 0.00272 -0.00952" rpy="0 0 -1.5708"/>
+      <mass value="0.2597"/>
+      <inertia ixx="0.00016771" ixy="0.00000000" ixz="0.00000595" iyy="0.00029046" iyz="0.00000000" izz="0.00024458"/>
+    </inertial>
+  </link>
+
+  <link name="link6">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/mycobot_320_pi_2022/link6.dae"/>
+      </geometry>
+      <origin xyz="0 0 -0.022" rpy="1.5708 1.5708 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/mycobot_320_pi_2022/collision/link6_hull.stl"/>
+      </geometry>
+      <origin xyz="0 0 -0.022" rpy="1.5708 1.5708 0"/>
+    </collision>
+    <inertial>
+      <origin xyz="0.00010 -0.00021 -0.01222" rpy="1.5708 1.5708 0"/>
+      <mass value="0.0358"/>
+      <inertia ixx="0.00001499" ixy="0.00000000" ixz="0.00000000" iyy="0.00000858" iyz="0.00000000" izz="0.00000858"/>
+    </inertial>
+  </link>
+
+  <joint name="joint2_to_joint1" type="revolute">
+    <axis xyz="0 0 1"/>
+    <limit effort="1000.0" lower="-2.93" upper="2.93" velocity="3.14"/>
+    <parent link="base"/>
+    <child link="link1"/>
+    <origin xyz="0 0 0.1739" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="joint3_to_joint2" type="revolute">
+    <axis xyz="0 0 1"/>
+    <limit effort="1000.0" lower="-2.35" upper="2.35" velocity="3.14"/>
+    <parent link="link1"/>
+    <child link="link2"/>
+    <origin xyz="0 -0.08878 0" rpy="0 -1.5708 1.5708"/>
+  </joint>
+
+  <joint name="joint4_to_joint3" type="revolute">
+    <axis xyz="0 0 1"/>
+    <limit effort="1000.0" lower="-2.53" upper="2.53" velocity="3.14"/>
+    <parent link="link2"/>
+    <child link="link3"/>
+    <origin xyz="0.135 0 -0.08878" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="joint5_to_joint4" type="revolute">
+    <axis xyz="0 0 1"/>
+    <limit effort="1000.0" lower="-2.53" upper="2.53" velocity="3.14"/>
+    <parent link="link3"/>
+    <child link="link4"/>
+    <origin xyz="0.120 0 0.08878" rpy="0 0 1.5708"/>
+  </joint>
+
+  <joint name="joint6_to_joint5" type="revolute">
+    <axis xyz="0 0 1"/>
+    <limit effort="1000.0" lower="-2.93" upper="2.93" velocity="3.14"/>
+    <parent link="link4"/>
+    <child link="link5"/>
+    <origin xyz="0 -0.095 0" rpy="1.5708 0 0"/>
+  </joint>
+
+  <joint name="joint6output_to_joint6" type="revolute">
+    <axis xyz="0 0 1"/>
+    <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="3.14"/>
+    <parent link="link5"/>
+    <child link="link6"/>
+    <origin xyz="0 0.0655 0" rpy="-1.5708 0 0"/>
+  </joint>
+
+</robot>
