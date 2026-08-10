@@ -1,71 +1,61 @@
 using System.Collections.Generic;
-using UnityEngine;
-using Unity.Robotics.ROSTCPConnector;
 using RosMessageTypes.Sensor;
+using Unity.Robotics.ROSTCPConnector;
+using UnityEngine;
 
 public class JointMirror : MonoBehaviour
 {
-    [Header("ROS Topic")]
-    [SerializeField] private string jointStateTopic = "/joint_states";
-
-    [Header("Robot Reference")]
-    [SerializeField] private Transform robotRoot;
-
-    [Header("Articulation Bodies")]
-    [SerializeField] private ArticulationBody joint2;
-    [SerializeField] private ArticulationBody joint3;
-    [SerializeField] private ArticulationBody joint4;
-    [SerializeField] private ArticulationBody joint5;
-    [SerializeField] private ArticulationBody joint6;
-    [SerializeField] private ArticulationBody joint6Flange;
-
-    [Header("Drive Settings")]
-    [SerializeField] private float stiffness = 10000f;
-    [SerializeField] private float damping = 100f;
-    [SerializeField] private float forceLimit = 1000f;
-
-    private Dictionary<string, ArticulationBody> jointLookup;
-
-    private void Start()
+    [System.Serializable]
+    struct JointMapping
     {
-        AnchorRootBody();
-
-        jointLookup = new Dictionary<string, ArticulationBody>
-        {
-            { "joint2_to_joint1", joint2 },
-            { "joint3_to_joint2", joint3 },
-            { "joint4_to_joint3", joint4 },
-            { "joint5_to_joint4", joint5 },
-            { "joint6_to_joint5", joint6 },
-            { "joint6output_to_joint6", joint6Flange }
-        };
-
-        ConfigureDrives();
-
-        ROSConnection.GetOrCreateInstance().Subscribe<JointStateMsg>(jointStateTopic, OnJointState);
+        public string rosJointName;
+        public string linkObjectName;
+        public bool invert;
     }
 
-    private void AnchorRootBody()
+    [Header("Robot")]
+    [SerializeField] ArticulationBody robotRoot;
+
+    [Header("ROS")]
+    [SerializeField] string topic = "/joint_states";
+
+    [Header("Drive Gains")]
+    [SerializeField] float stiffness = 10000f;
+    [SerializeField] float damping = 100f;
+    [SerializeField] float forceLimit = 1000f;
+
+    [Header("Joint Mapping")]
+    [SerializeField] List<JointMapping> mappings = new List<JointMapping>
     {
-        ArticulationBody[] bodies = robotRoot.GetComponentsInChildren<ArticulationBody>();
-        for (int i = 0; i < bodies.Length; i++)
+        new JointMapping { rosJointName = "joint2_to_joint1", linkObjectName = "link1", invert = false },
+        new JointMapping { rosJointName = "joint3_to_joint2", linkObjectName = "link2", invert = false },
+        new JointMapping { rosJointName = "joint4_to_joint3", linkObjectName = "link3", invert = false },
+        new JointMapping { rosJointName = "joint5_to_joint4", linkObjectName = "link4", invert = false },
+        new JointMapping { rosJointName = "joint6_to_joint5", linkObjectName = "link5", invert = false },
+        new JointMapping { rosJointName = "joint6output_to_joint6", linkObjectName = "link6", invert = false }
+    };
+
+    readonly Dictionary<string, ArticulationBody> bodiesByJoint = new Dictionary<string, ArticulationBody>();
+    readonly Dictionary<string, bool> invertByJoint = new Dictionary<string, bool>();
+
+    void Start()
+    {
+        if (robotRoot == null)
         {
-            if (bodies[i].isRoot)
-            {
-                bodies[i].immovable = true;
-                return;
-            }
+            Debug.LogError("JointMirror: robotRoot not assigned.");
+            enabled = false;
+            return;
         }
 
-        Debug.LogWarning("JointMirror: no root ArticulationBody found under robotRoot.");
-    }
+        Dictionary<string, ArticulationBody> bodiesByName = new Dictionary<string, ArticulationBody>();
+        foreach (ArticulationBody body in robotRoot.GetComponentsInChildren<ArticulationBody>())
+            bodiesByName[body.gameObject.name] = body;
 
-    private void ConfigureDrives()
-    {
-        foreach (ArticulationBody body in jointLookup.Values)
+        foreach (JointMapping m in mappings)
         {
-            if (body == null)
+            if (!bodiesByName.TryGetValue(m.linkObjectName, out ArticulationBody body))
             {
+                Debug.LogError($"JointMirror: link '{m.linkObjectName}' not found under robot root.");
                 continue;
             }
 
@@ -74,20 +64,28 @@ public class JointMirror : MonoBehaviour
             drive.damping = damping;
             drive.forceLimit = forceLimit;
             body.xDrive = drive;
+
+            bodiesByJoint[m.rosJointName] = body;
+            invertByJoint[m.rosJointName] = m.invert;
         }
+
+        Debug.Log($"JointMirror: mapped {bodiesByJoint.Count} joints, subscribing to {topic}.");
+        ROSConnection.GetOrCreateInstance().Subscribe<JointStateMsg>(topic, OnJointState);
     }
 
-    private void OnJointState(JointStateMsg msg)
+    void OnJointState(JointStateMsg msg)
     {
         for (int i = 0; i < msg.name.Length; i++)
         {
-            if (!jointLookup.TryGetValue(msg.name[i], out ArticulationBody body) || body == null)
-            {
+            if (!bodiesByJoint.TryGetValue(msg.name[i], out ArticulationBody body))
                 continue;
-            }
+
+            float degrees = (float)msg.position[i] * Mathf.Rad2Deg;
+            if (invertByJoint[msg.name[i]])
+                degrees = -degrees;
 
             ArticulationDrive drive = body.xDrive;
-            drive.target = (float)msg.position[i] * Mathf.Rad2Deg;
+            drive.target = degrees;
             body.xDrive = drive;
         }
     }
