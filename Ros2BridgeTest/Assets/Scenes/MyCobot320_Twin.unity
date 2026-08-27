@@ -964,7 +964,7 @@ ArticulationBody:
   m_ImplicitCom: 0
   m_ImplicitTensor: 0
   m_Immovable: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_CollisionDetectionMode: 0
 --- !u!114 &277302604
 MonoBehaviour:
@@ -1115,7 +1115,7 @@ ArticulationBody:
   m_ImplicitCom: 0
   m_ImplicitTensor: 0
   m_Immovable: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_CollisionDetectionMode: 0
 --- !u!114 &316184928
 MonoBehaviour:
@@ -1273,7 +1273,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 502928906}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &417126782
@@ -1489,7 +1490,6 @@ GameObject:
   m_Component:
   - component: {fileID: 502928906}
   - component: {fileID: 502928905}
-  - component: {fileID: 502928904}
   m_Layer: 0
   m_Name: firefighter
   m_TagString: robot
@@ -1497,28 +1497,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &502928904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 502928903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d607ea46a579d44c4b19a6322ce4b9b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Robotics.UrdfImporter::Unity.Robotics.UrdfImporter.Control.Controller
-  selectedJoint: 
-  selectedIndex: 0
-  control: 0
-  stiffness: 0
-  damping: 0
-  forceLimit: 0
-  speed: 5
-  torque: 100
-  acceleration: 5
-  highLightColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &502928905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1543,14 +1521,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 502928903}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 825235875}
   - {fileID: 1464208731}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 376231162}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &504400010
 PrefabInstance:
@@ -1920,7 +1898,7 @@ ArticulationBody:
   m_ImplicitCom: 0
   m_ImplicitTensor: 0
   m_Immovable: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_CollisionDetectionMode: 0
 --- !u!114 &550602846
 MonoBehaviour:
@@ -2150,7 +2128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b80a88e54e702394ebbdd05105a8923b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JointMirror
-  robotRoot: {fileID: 0}
+  robotRoot: {fileID: 1464208733}
   topic: /joint_states
   stiffness: 10000
   damping: 100
@@ -2201,7 +2179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34363e5f4b8672d4cadd0beb48be1387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GripperMirror
-  robotRoot: {fileID: 0}
+  robotRoot: {fileID: 1464208733}
   topic: /joint_states
   actuatedJointName: gripper_controller
   actuatedLinkName: gripper_left3
@@ -2564,7 +2542,7 @@ ArticulationBody:
   m_ImplicitCom: 0
   m_ImplicitTensor: 0
   m_Immovable: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_CollisionDetectionMode: 0
 --- !u!114 &673070121
 MonoBehaviour:
@@ -4192,7 +4170,7 @@ ArticulationBody:
   m_ImplicitCom: 0
   m_ImplicitTensor: 0
   m_Immovable: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_CollisionDetectionMode: 0
 --- !u!114 &917499757
 MonoBehaviour:
@@ -4389,7 +4367,7 @@ ArticulationBody:
   m_ImplicitCom: 0
   m_ImplicitTensor: 0
   m_Immovable: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_CollisionDetectionMode: 0
 --- !u!114 &930511506
 MonoBehaviour:
@@ -5656,7 +5634,7 @@ ArticulationBody:
   m_ImplicitCom: 0
   m_ImplicitTensor: 0
   m_Immovable: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_CollisionDetectionMode: 0
 --- !u!114 &1223227611
 MonoBehaviour:
@@ -6036,7 +6014,7 @@ ArticulationBody:
   m_ImplicitCom: 0
   m_ImplicitTensor: 0
   m_Immovable: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_CollisionDetectionMode: 0
 --- !u!114 &1415902437
 MonoBehaviour:
@@ -6304,8 +6282,8 @@ ArticulationBody:
     m_Bits: 0
   m_ImplicitCom: 0
   m_ImplicitTensor: 0
-  m_Immovable: 0
-  m_UseGravity: 1
+  m_Immovable: 1
+  m_UseGravity: 0
   m_CollisionDetectionMode: 0
 --- !u!114 &1464208734
 MonoBehaviour:
@@ -6319,7 +6297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fba5fd74d37a6cf4284698624eb8f6aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Robotics.UrdfImporter::Unity.Robotics.UrdfImporter.UrdfLink
-  IsBaseLink: 0
+  IsBaseLink: 1
 --- !u!1001 &1471173848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7064,7 +7042,7 @@ ArticulationBody:
   m_ImplicitCom: 0
   m_ImplicitTensor: 0
   m_Immovable: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_CollisionDetectionMode: 0
 --- !u!114 &1655749795
 MonoBehaviour:
@@ -7909,7 +7887,7 @@ ArticulationBody:
   m_ImplicitCom: 0
   m_ImplicitTensor: 0
   m_Immovable: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_CollisionDetectionMode: 0
 --- !u!114 &1829078365
 MonoBehaviour:
@@ -8254,7 +8232,7 @@ ArticulationBody:
   m_ImplicitCom: 0
   m_ImplicitTensor: 0
   m_Immovable: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_CollisionDetectionMode: 0
 --- !u!114 &1883125806
 MonoBehaviour:
@@ -8450,7 +8428,7 @@ ArticulationBody:
   m_ImplicitCom: 0
   m_ImplicitTensor: 0
   m_Immovable: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_CollisionDetectionMode: 0
 --- !u!114 &1918006893
 MonoBehaviour:
@@ -8737,7 +8715,7 @@ ArticulationBody:
   m_ImplicitCom: 0
   m_ImplicitTensor: 0
   m_Immovable: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_CollisionDetectionMode: 0
 --- !u!114 &2023799555
 MonoBehaviour:
@@ -8887,7 +8865,7 @@ ArticulationBody:
   m_ImplicitCom: 0
   m_ImplicitTensor: 0
   m_Immovable: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_CollisionDetectionMode: 0
 --- !u!114 &2052237406
 MonoBehaviour:
@@ -9076,4 +9054,3 @@ SceneRoots:
   - {fileID: 238342204}
   - {fileID: 376231162}
   - {fileID: 619391615}
-  - {fileID: 502928906}

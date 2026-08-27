@@ -30,6 +30,10 @@ public class GripperMirror : MonoBehaviour
     [Header("Actuated Joint Sign")]
     [SerializeField] bool invertActuated;
 
+    [Header("Debug")]
+    [SerializeField] bool logToConsole = true;
+    [SerializeField] bool logOnlyOnChange = true;
+
     [Header("Mimic Joints")]
     [SerializeField] List<MimicMapping> mimics = new List<MimicMapping>
     {
@@ -41,8 +45,10 @@ public class GripperMirror : MonoBehaviour
     };
 
     ArticulationBody actuatedBody;
-    readonly List<(ArticulationBody body, float mult, float off, bool invert)> mimicBodies =
-        new List<(ArticulationBody, float, float, bool)>();
+    readonly List<(ArticulationBody body, string name, float mult, float off, bool invert)> mimicBodies =
+        new List<(ArticulationBody, string, float, float, bool)>();
+
+    float lastLogged = float.NaN;
 
     void Start()
     {
@@ -54,7 +60,7 @@ public class GripperMirror : MonoBehaviour
         }
 
         Dictionary<string, ArticulationBody> bodiesByName = new Dictionary<string, ArticulationBody>();
-        foreach (ArticulationBody body in robotRoot.GetComponentsInChildren<ArticulationBody>())
+        foreach (ArticulationBody body in robotRoot.GetComponentsInChildren<ArticulationBody>())    
             bodiesByName[body.gameObject.name] = body;
 
         if (!bodiesByName.TryGetValue(actuatedLinkName, out actuatedBody))
@@ -73,7 +79,7 @@ public class GripperMirror : MonoBehaviour
                 continue;
             }
             ApplyGains(body);
-            mimicBodies.Add((body, m.multiplier, m.offset, m.invertUnitySign));
+            mimicBodies.Add((body, m.linkObjectName, m.multiplier, m.offset, m.invertUnitySign));
         }
 
         Debug.Log($"GripperMirror: actuated + {mimicBodies.Count} mimics, subscribing to {topic}.");
@@ -86,6 +92,8 @@ public class GripperMirror : MonoBehaviour
         drive.stiffness = stiffness;
         drive.damping = damping;
         drive.forceLimit = forceLimit;
+        drive.lowerLimit = -90f;
+        drive.upperLimit = 90f;
         body.xDrive = drive;
     }
 
@@ -103,14 +111,31 @@ public class GripperMirror : MonoBehaviour
 
             SetTarget(actuatedBody, actuatedDeg);
 
-            foreach ((ArticulationBody body, float mult, float off, bool invert) in mimicBodies)
+            bool doLog = logToConsole && (!logOnlyOnChange || Mathf.Abs(rad - lastLogged) > 0.001f);
+            System.Text.StringBuilder sb = null;
+            if (doLog)
+            {
+                lastLogged = rad;
+                sb = new System.Text.StringBuilder();
+                sb.AppendLine("===== GripperMirror snapshot =====");
+                sb.AppendLine($"  actuated rad={rad:+0.0000} -> {actuatedLinkName} target={actuatedDeg:+0.00} deg (invertActuated={invertActuated})");
+            }
+
+            foreach ((ArticulationBody body, string artname, float mult, float off, bool invert) in mimicBodies)
             {
                 float mimicRad = rad * mult + off;
                 float mimicDeg = mimicRad * Mathf.Rad2Deg;
                 if (invert)
                     mimicDeg = -mimicDeg;
                 SetTarget(body, mimicDeg);
+
+                if (sb != null)
+                    sb.AppendLine($"  {artname,-16} mult={mult:+0.0} invert={invert,-5} -> target={mimicDeg:+0.00} deg");
             }
+
+            if (sb != null)
+                Debug.Log(sb.ToString());
+
             return;
         }
     }
