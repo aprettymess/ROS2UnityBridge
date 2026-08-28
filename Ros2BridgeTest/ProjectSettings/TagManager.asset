@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - robot
+  - Can
+  - NoDeselect
+  - Align
   layers:
   - Default
   - TransparentFX
@@ -19,17 +22,17 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - rvMUSensor
+  - rvMUTransport
+  - rvSensor
+  - rvTransport
+  - rvMU
+  - rvSnapping
+  - rvSimDynamic
+  - rvSimStatic
+  - rvSelection
+  - rvSceneMesh
+  - rvCollissionCheck
   - 
   - 
   - 
