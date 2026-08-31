@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c444d6f85828f1b4f9b89c7c387f9ddd, type: 3}
   m_Name: msgbrowser_settings
   m_EditorClassIdentifier: Unity.Robotics.ROSTCPConnector.Editor::Unity.Robotics.ROSTCPConnector.Editor.MessageGeneration.MessageGenBrowserSettings
-  inputPath: C:\Users\asus\UnityRobotics\Unity-Robotics-Hub\tutorials\ros_unity_integration\ros2_packages\unity_robotics_demo_msgs
+  inputPath: \\wsl.localhost\Ubuntu-22.04/home/sines/mc320_ws/src/mycobot_mover_interfaces
   relativeOutPath: RosMessages
