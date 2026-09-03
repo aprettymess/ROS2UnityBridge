@@ -1,3 +1,6 @@
 [submodule "Unity-Robotics-Hub"]
 	path = Unity-Robotics-Hub
 	url = https://github.com/Unity-Technologies/Unity-Robotics-Hub.git
+[submodule "mycobot_ros"]
+	path = mycobot_ros
+	url = https://github.com/elephantrobotics/mycobot_ros.git
