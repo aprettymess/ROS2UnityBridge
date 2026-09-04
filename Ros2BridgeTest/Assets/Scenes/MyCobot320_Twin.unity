@@ -2207,7 +2207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JointMirror
   robotRoot: {fileID: 1464208733}
-  topic: /joint_states
+  topic: /robot_joint_states
   stiffness: 10000
   damping: 100
   forceLimit: 1000
@@ -2258,7 +2258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GripperMirror
   robotRoot: {fileID: 1464208733}
-  topic: /joint_states
+  topic: /robot_joint_states
   actuatedJointName: gripper_controller
   actuatedLinkName: gripper_left3
   stiffness: 10000
