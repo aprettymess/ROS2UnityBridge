@@ -1271,7 +1271,7 @@ Transform:
   m_GameObject: {fileID: 376231161}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.7719, z: 0.231}
+  m_LocalPosition: {x: 0, y: 0.761, z: 0.231}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5967,6 +5967,73 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.Robotics.UrdfImporter::Unity.Robotics.UrdfImporter.UrdfLink
   IsBaseLink: 0
+--- !u!1 &1277523823
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1277523825}
+  - component: {fileID: 1277523824}
+  m_Layer: 0
+  m_Name: RealArmControlPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1277523824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277523823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8b751a06efcf544d8375d9d52cb4ea6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactions.RealArmControlPanel
+  jointStateTopic: /robot_joint_states
+  armDeltaTopic: /arm_delta
+  armTargetTopic: /arm_target
+  gripperCommandTopic: /gripper_command
+  gripperAngleTopic: /gripper_angle
+  executeTopic: /execute_real
+  setMaxStepTopic: /set_max_step
+  armEnabled: 1
+  j6OffsetDeg: 45
+  nudgeJ1: 5
+  nudgeJ2: 5
+  nudgeJ3: 5
+  nudgeJ4: 5
+  nudgeJ5: 5
+  nudgeJ6: 5
+  targetJ1: 0
+  targetJ2: 0
+  targetJ3: 0
+  targetJ4: 0
+  targetJ5: 0
+  targetJ6: 0
+  gripperAngle: 50
+  maxStepToPush: 20
+--- !u!4 &1277523825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277523823}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1314306841
 GameObject:
   m_ObjectHideFlags: 0
@@ -9237,3 +9304,4 @@ SceneRoots:
   - {fileID: 847502433}
   - {fileID: 523364099}
   - {fileID: 1050785814}
+  - {fileID: 1277523825}
