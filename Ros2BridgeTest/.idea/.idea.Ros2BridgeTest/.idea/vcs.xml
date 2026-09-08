@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../Unity-Robotics-Hub" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../mycobot_ros" vcs="Git" />
   </component>
 </project>
