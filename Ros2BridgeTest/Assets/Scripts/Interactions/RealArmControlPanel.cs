@@ -70,6 +70,31 @@ namespace Interactions
         readonly int[] rosIndex = new int[6];
         bool indexReady;
         bool targetSeeded;
+        
+        [Header("Maintenance")]
+        [SerializeField] string maintenanceTopic = "/maintenance";
+        [SerializeField] bool confirmRelease;
+
+        [BoxGroup("Maintenance"), Button("Lock Servos (Focus)"), GUIColor(0.5f, 0.9f, 0.5f)]
+        void MaintLock() => ros.Publish(maintenanceTopic, new Int32Msg { data = 1 });
+
+        [BoxGroup("Maintenance"), Button("Power On")]
+        void MaintPowerOn() => ros.Publish(maintenanceTopic, new Int32Msg { data = 3 });
+
+        [BoxGroup("Maintenance"), Button("Reconnect Socket")]
+        void MaintReconnect() => ros.Publish(maintenanceTopic, new Int32Msg { data = 5 });
+
+        [BoxGroup("Maintenance"), Button("RELEASE Servos (arm goes limp!)"), GUIColor(1f, 0.4f, 0.4f)]
+        void MaintRelease()
+        {
+            if (!confirmRelease)
+            {
+                Debug.LogWarning("Tick 'confirmRelease' first - releasing makes the arm go LIMP and sag.");
+                return;
+            }
+            ros.Publish(maintenanceTopic, new Int32Msg { data = 2 });
+            confirmRelease = false;
+        }
 
         void Start()
         {
@@ -81,7 +106,8 @@ namespace Interactions
             ros.RegisterPublisher<Int32Msg>(gripperAngleTopic);
             ros.RegisterPublisher<EmptyMsg>(executeTopic);
             ros.RegisterPublisher<Int32Msg>(setMaxStepTopic);
-            ros.RegisterPublisher<Int32Msg>(setSpeedTopic);
+            ros.RegisterPublisher<Int32Msg>(setSpeedTopic);           
+            ros.RegisterPublisher<Int32Msg>(maintenanceTopic);
         }
 
         void OnJointState(JointStateMsg msg)

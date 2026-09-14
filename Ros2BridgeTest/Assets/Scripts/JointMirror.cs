@@ -17,12 +17,15 @@ public class JointMirror : MonoBehaviour
     [SerializeField] ArticulationBody robotRoot;
 
     [Header("ROS")]
-    [SerializeField] string topic = "/joint_states";
+    [SerializeField] string topic = "/robot_joint_states";
 
     [Header("Drive Gains")]
-    [SerializeField] float stiffness = 10000f;
-    [SerializeField] float damping = 100f;
+    [SerializeField] float stiffness = 1000f;
+    [SerializeField] private float damping;
     [SerializeField] float forceLimit = 1000f;
+
+    [Header("Mode")]
+    [SerializeField] bool directPosition = true;
 
     [Header("Joint Mapping")]
     [SerializeField] List<JointMapping> mappings = new List<JointMapping>
@@ -80,13 +83,22 @@ public class JointMirror : MonoBehaviour
             if (!bodiesByJoint.TryGetValue(msg.name[i], out ArticulationBody body))
                 continue;
 
-            float degrees = (float)msg.position[i] * Mathf.Rad2Deg;
+            float radians = (float)msg.position[i];
+            float degrees = radians * Mathf.Rad2Deg;
             if (invertByJoint[msg.name[i]])
+            {
                 degrees = -degrees;
+                radians = -radians;
+            }
 
             ArticulationDrive drive = body.xDrive;
             drive.target = degrees;
             body.xDrive = drive;
+
+            if (directPosition)
+            {
+                body.jointPosition = new ArticulationReducedSpace(radians);
+            }
         }
     }
 }
