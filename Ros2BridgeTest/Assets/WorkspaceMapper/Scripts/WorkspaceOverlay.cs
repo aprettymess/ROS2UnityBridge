@@ -51,9 +51,17 @@ namespace WorkspaceMapper.Scripts
             ReachMapper reach = Object.FindFirstObjectByType<ReachMapper>();
             using (new EditorGUI.DisabledScope(!reach))
             {
-                if (GUILayout.Button("Compute") && reach) reach.Compute();
+                if (GUILayout.Button("Compute (analytic)") && reach) reach.Compute();
+                if (GUILayout.Button("Start driven sweep") && reach) reach.StartDrivenSweep();
+                using (new EditorGUILayout.HorizontalScope())
+                {
+                    if (GUILayout.Button("Pause") && reach) reach.PauseSweep();
+                    if (GUILayout.Button("Resume") && reach) reach.ResumeSweep();
+                    if (GUILayout.Button("Stop") && reach) reach.StopSweep();
+                }
                 if (GUILayout.Button("Cycle view") && reach) reach.CycleMode();
                 if (GUILayout.Button("Validate align") && reach) reach.ValidateAlignment();
+                if (GUILayout.Button("Open graph") && reach) reach.OpenGraph();
                 if (GUILayout.Button("Save PNG") && reach) reach.SaveReachPng();
                 if (GUILayout.Button("Clear") && reach) reach.Clear();
             }

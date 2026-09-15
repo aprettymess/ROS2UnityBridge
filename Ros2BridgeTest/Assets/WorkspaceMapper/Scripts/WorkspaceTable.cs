@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Interactions;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -7,9 +8,6 @@ namespace WorkspaceMapper.Scripts
     [ExecuteAlways]
     public class WorkspaceTable : MonoBehaviour
     {
-        private static readonly int BaseColor = Shader.PropertyToID("_BaseColor");
-        private static readonly int Color1 = Shader.PropertyToID("_Color");
-
         public enum LengthUnit { Meters, Centimeters, Millimeters, Inches }
 
         [Header("Units")]
@@ -29,6 +27,8 @@ namespace WorkspaceMapper.Scripts
         [SerializeField, OnValueChanged("Rebuild")] Color tableColor = new Color(0.85f, 0.86f, 0.88f);
         [SerializeField, OnValueChanged("Rebuild")] Color minorColor = new Color(0.55f, 0.60f, 0.68f);
         [SerializeField, OnValueChanged("Rebuild")] Color majorColor = new Color(0.30f, 0.35f, 0.44f);
+        [Header("Overlay")]
+        [SerializeField] bool showLegend = true;
 
         Material _tableMat, _minorMat, _majorMat;
 
@@ -45,6 +45,14 @@ namespace WorkspaceMapper.Scripts
         public float LengthMeters => L;
         public float WidthMeters => W;
         public float CellMeters => C;
+        public float LengthU => FromM(L);
+        public float WidthU => FromM(W);
+        public float HeightU => FromM(H);
+        public float CellU => FromM(C);
+        public void SetLengthU(float v) { length = Mathf.Max(v, 0.01f); Rebuild(); }
+        public void SetWidthU(float v) { width = Mathf.Max(v, 0.01f); Rebuild(); }
+        public void SetHeightU(float v) { height = Mathf.Max(v, 0.01f); Rebuild(); }
+        public void SetCellU(float v) { cell = Mathf.Max(v, 0.01f); Rebuild(); }
 
         void OnEnable() => Rebuild();
 
@@ -64,8 +72,8 @@ namespace WorkspaceMapper.Scripts
             MeshFilter mf = Ensure<MeshFilter>(t);
             MeshRenderer mr = Ensure<MeshRenderer>(t);
             mf.sharedMesh = BoxMesh(L, H, W);
-            if (_tableMat == null) _tableMat = MakeMat("Universal Render Pipeline/Lit");
-            SetColor(_tableMat, tableColor);
+            if (_tableMat == null) _tableMat = MaterialUtil.MakeLit();
+            MaterialUtil.SetColor(_tableMat, tableColor);
             mr.sharedMaterial = _tableMat;
         }
 
@@ -112,8 +120,8 @@ namespace WorkspaceMapper.Scripts
             mesh.SetIndices(idx, MeshTopology.Lines, 0);
             mesh.RecalculateBounds();
             mf.sharedMesh = mesh;
-            if (mat == null) mat = MakeMat("Universal Render Pipeline/Unlit");
-            SetColor(mat, c);
+            if (mat == null) mat = MaterialUtil.MakeUnlit();
+            MaterialUtil.SetColor(mat, c);
             mr.sharedMaterial = mat;
         }
 
@@ -128,18 +136,6 @@ namespace WorkspaceMapper.Scripts
             T c = t.GetComponent<T>();
             if (!c) c = t.gameObject.AddComponent<T>();
             return c;
-        }
-        static Material MakeMat(string s)
-        {
-            Shader sh = Shader.Find(s);
-            if (!sh) sh = Shader.Find("Sprites/Default");
-            return new Material(sh);
-        }
-        static void SetColor(Material m, Color c)
-        {
-            if (m.HasProperty(BaseColor)) m.SetColor(BaseColor, c);
-            if (m.HasProperty(Color1)) m.SetColor(Color1, c);
-            m.color = c;
         }
         static Mesh BoxMesh(float l, float h, float w)
         {
@@ -169,11 +165,37 @@ namespace WorkspaceMapper.Scripts
 
         void OnGUI()
         {
-            GUILayout.BeginArea(new Rect(10, 10, 170, 74), GUI.skin.box);
-            GUILayout.Label("Table");
-            GUILayout.Label($"L {FromM(L):0.#} x W {FromM(W):0.#} x H {FromM(H):0.#} {UnitTag}");
-            GUILayout.Label($"Grid cell: {FromM(C):0.##} {UnitTag}");
+            if (!showLegend) { DrawWorldLabels(); return; }
+            GUILayout.BeginArea(new Rect(10, 10, 186, 70), Ui.Panel);
+            GUILayout.Label("TABLE", Ui.Header);
+            GUILayout.Label($"L {FromM(L):0.#} x W {FromM(W):0.#} x H {FromM(H):0.#} {UnitTag}", Ui.Label);
+            GUILayout.Label($"Grid cell: {FromM(C):0.##} {UnitTag}", Ui.Label);
             GUILayout.EndArea();
+            DrawWorldLabels();
+        }
+
+        void DrawWorldLabel(Camera c, Vector3 world, string text)
+        {
+            Vector3 sp = c.WorldToScreenPoint(world);
+            if (sp.z <= 0f) return;
+            GUI.Label(new Rect(sp.x - 30f, Screen.height - sp.y - 8f, 90f, 18f), text, Ui.Label);
+        }
+
+        void DrawWorldLabels()
+        {
+            Camera c = Camera.main;
+            if (!c) { var wc = FindFirstObjectByType<WorkspaceCamera>(); if (wc) c = wc.GetComponent<Camera>(); }
+            if (!c) return;
+            float hx = L * 0.5f, hz = W * 0.5f, y = 0.004f;
+            Transform tr = transform;
+            DrawWorldLabel(c, tr.TransformPoint(new Vector3(0, y, -hz)), $"L {FromM(L):0.#}{UnitTag}");
+            DrawWorldLabel(c, tr.TransformPoint(new Vector3(-hx, y, 0)), $"W {FromM(W):0.#}{UnitTag}");
+            DrawWorldLabel(c, tr.TransformPoint(new Vector3(-hx, -H, -hz)), $"H {FromM(H):0.#}{UnitTag}");
+            int nx = Mathf.FloorToInt(L / C), nz = Mathf.FloorToInt(W / C);
+            for (int k = 0; k <= nx; k += majorEvery)
+                DrawWorldLabel(c, tr.TransformPoint(new Vector3(-hx + k * C, y, -hz - 0.015f)), $"{FromM(k * C):0.#}");
+            for (int k = 0; k <= nz; k += majorEvery)
+                DrawWorldLabel(c, tr.TransformPoint(new Vector3(-hx - 0.015f, y, -hz + k * C)), $"{FromM(k * C):0.#}");
         }
 
 #if UNITY_EDITOR

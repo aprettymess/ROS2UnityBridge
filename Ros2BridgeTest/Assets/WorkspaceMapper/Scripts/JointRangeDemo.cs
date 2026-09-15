@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using Interactions;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -9,6 +8,8 @@ namespace WorkspaceMapper.Scripts
     {
         [SerializeField] WorkspaceRobotBinding binding;
         [SerializeField] float secondsPerMove = 1.2f;
+        [SerializeField] bool stopAtTable = true;
+        [SerializeField] float toolLengthMm = 170f;
 
         [Button(ButtonSizes.Large)]
         public void SweepFullExtent()
@@ -25,10 +26,18 @@ namespace WorkspaceMapper.Scripts
             float[] a = new float[6];
             for (int j = 0; j < 6; j++)
             {
-                yield return MoveJoint(a, j, lim[j].x);
-                yield return MoveJoint(a, j, lim[j].y);
+                yield return MoveJoint(a, j, Safe(a, j, lim[j].x));
+                yield return MoveJoint(a, j, Safe(a, j, lim[j].y));
                 yield return MoveJoint(a, j, 0f);
             }
+        }
+
+        float Safe(float[] a, int j, float target)
+        {
+            if (!stopAtTable) return target;
+            float[] test = (float[])a.Clone();
+            test[j] = target;
+            return MyCobot320Fk.PosMm(MyCobot320Fk.TcpBaseMatrix(test, toolLengthMm)).z < 0f ? a[j] : target;
         }
 
         IEnumerator MoveJoint(float[] a, int j, float target)

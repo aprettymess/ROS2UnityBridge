@@ -1,19 +1,19 @@
 using UnityEngine;
 
-namespace Interactions
+namespace WorkspaceMapper.Scripts
 {
     public static class MyCobot320Fk
     {
         // Modified (Craig) DH: alpha_{i-1}, a_{i-1} (mm), d_i (mm), theta offset (rad).
         // Validated against the real arm's angles_to_coords (matches to <0.1mm).
-        static readonly float[,] DH =
+        static readonly float[][] DH =
         {
-            { 0f,             0f,     173.9f,  0f },
-            { Mathf.PI / 2f,  0f,     0f,     -Mathf.PI / 2f },
-            { 0f,            -135f,   0f,      0f },
-            { 0f,            -120f,   88.78f, -Mathf.PI / 2f },
-            { Mathf.PI / 2f,  0f,     95.0f,   0f },
-            { -Mathf.PI / 2f, 0f,     65.5f,   0f }
+            new[] { 0f,             0f,     173.9f,  0f },
+            new[] { Mathf.PI / 2f,  0f,     0f,     -Mathf.PI / 2f },
+            new[] { 0f,            -135f,   0f,      0f },
+            new[] { 0f,            -120f,   88.78f, -Mathf.PI / 2f },
+            new[] { Mathf.PI / 2f,  0f,     95.0f,   0f },
+            new[] { -Mathf.PI / 2f, 0f,     65.5f,   0f }
         };
 
         // Panel joint limits (2-3 deg inside mechanical so joints don't stick).
@@ -39,7 +39,7 @@ namespace Interactions
         {
             Matrix4x4 t = Matrix4x4.identity;
             for (int i = 0; i < 6; i++)
-                t *= Link(DH[i, 0], DH[i, 1], DH[i, 2], anglesDeg[i] * Mathf.Deg2Rad + DH[i, 3]);
+                t *= Link(DH[i][0], DH[i][1], DH[i][2], anglesDeg[i] * Mathf.Deg2Rad + DH[i][3]);
             if (Mathf.Abs(toolMm) > 0.0001f) t *= Link(0f, 0f, toolMm, 0f);
             return t;
         }

@@ -1,22 +1,18 @@
 ﻿using System.Collections.Generic;
+using Interactions;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
 
 namespace WorkspaceMapper.Scripts
 {
     public class GridPaintTool : MonoBehaviour
     {
-        private static readonly int BaseColor = Shader.PropertyToID("_BaseColor");
-        private static readonly int SrcBlend = Shader.PropertyToID("_SrcBlend");
-        private static readonly int DstBlend = Shader.PropertyToID("_DstBlend");
-        private static readonly int ZWrite = Shader.PropertyToID("_ZWrite");
-        private static readonly int Cull = Shader.PropertyToID("_Cull");
         [SerializeField] WorkspaceTable table;
         [SerializeField] Camera cam;
         [SerializeField] Color paintColor = new Color(0.2f, 0.6f, 1f, 0.6f);
         [SerializeField] Key paintKey = Key.B;
         [SerializeField] Key eraseKey = Key.V;
+        [SerializeField, Range(1, 6)] int brushCells = 1;
 
         readonly Dictionary<Vector2Int, GameObject> _cells = new();
         Material _mat;
@@ -44,11 +40,25 @@ namespace WorkspaceMapper.Scripts
 
             if (erase)
             {
-                if (_cells.TryGetValue(key, out var g)) { Destroy(g); _cells.Remove(key); }
+                int er = brushCells - 1;
+                for (int bx = -er; bx <= er; bx++)
+                for (int bz = -er; bz <= er; bz++)
+                {
+                    var ek = new Vector2Int(ix + bx, iz + bz);
+                    if (_cells.TryGetValue(ek, out var g)) { Destroy(g); _cells.Remove(ek); }
+                }
                 return;
             }
-            if (_cells.ContainsKey(key)) return;
+            int rad = brushCells - 1;
+            for (int bx = -rad; bx <= rad; bx++)
+            for (int bz = -rad; bz <= rad; bz++)
+                PaintCell(new Vector2Int(ix + bx, iz + bz), cM, L, W);
+        }
 
+        void PaintCell(Vector2Int key, float cM, float L, float W)
+        {
+            if (_cells.ContainsKey(key)) return;
+            int ix = key.x, iz = key.y;
             var cell = GameObject.CreatePrimitive(PrimitiveType.Quad);
             Destroy(cell.GetComponent<Collider>());
             cell.transform.SetParent(transform, false);
@@ -57,21 +67,19 @@ namespace WorkspaceMapper.Scripts
             cell.transform.localScale = Vector3.one * (cM * 0.95f);
             if (_mat == null)
             {
-                _mat = new Material(Shader.Find("Universal Render Pipeline/Unlit"));
-                if (_mat.HasProperty(BaseColor)) _mat.SetColor(BaseColor, paintColor);
-                _mat.color = paintColor;
-                _mat.SetInt(nameID: SrcBlend, (int)BlendMode.SrcAlpha);
-                _mat.SetInt(DstBlend, (int)BlendMode.OneMinusSrcAlpha);
-                _mat.SetInt(nameID: ZWrite, 0);
-                _mat.SetInt(Cull, 0);
-                _mat.renderQueue = (int)RenderQueue.Transparent;
+                _mat = MaterialUtil.MakeUnlit();
+                MaterialUtil.SetColor(_mat, paintColor);
+                MaterialUtil.SetTransparent(_mat);
             }
             cell.GetComponent<Renderer>().sharedMaterial = _mat;
             _cells[key] = cell;
         }
 
+        public Color PaintColor { get => paintColor; set => paintColor = value; }
+        public int BrushCells { get => brushCells; set => brushCells = Mathf.Clamp(value, 1, 6); }
+
         [Sirenix.OdinInspector.Button]
-        void ClearPaint()
+        public void ClearPaint()
         {
             foreach (var kv in _cells) if (kv.Value) Destroy(kv.Value);
             _cells.Clear();
