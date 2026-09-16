@@ -12,35 +12,31 @@ namespace WorkspaceMapper.Scripts
         [SerializeField] Mode _mode = Mode.Orbit;
         [SerializeField] Key _toggleModeKey = Key.F;
         [SerializeField] Key _toggleProjectionKey = Key.O;
-        [SerializeField] Key _handKey = Key.H;
+        [SerializeField] bool _handTool;
 
         [Header("Clipping")]
         [SerializeField] float _nearClip = 0.003f;
         [SerializeField] float _farClip = 1000f;
 
-        [Header("Focus (orbit)")]
+        [Header("Focus")]
         [SerializeField] Transform _pivot;
         [SerializeField] Vector3 _fallbackFocus = Vector3.zero;
 
-        [Header("Orbit speeds")]
-        [SerializeField] float _orbitSpeed = 0.18f;
-        [SerializeField] float _panSpeed = 0.0016f;
-        [SerializeField] float _zoomSpeed = 0.001f;
+        [Header("Orbit")]
+        [SerializeField] float _orbitSpeed = 0.2f;
+        [SerializeField] float _panSpeed = 0.0018f;
+        [SerializeField] float _zoomSpeed = 0.0012f;
         [SerializeField] float _distanceMin = 0.05f;
         [SerializeField] float _distanceMax = 8f;
         [SerializeField] float _pitchMin = -89f;
         [SerializeField] float _pitchMax = 89f;
 
-        [Header("Fly speeds")]
+        [Header("Fly")]
         [SerializeField] float _flyLookSpeed = 0.12f;
         [SerializeField] float _flyMoveSpeed = 1.2f;
         [SerializeField] float _flyBoost = 3f;
         [SerializeField] float _flySpeedMin = 0.05f;
-        [SerializeField] float _flySpeedMax = 30f;
-
-        [Header("HUD")]
-        [SerializeField] bool _showHud = true;
-        [SerializeField] bool _handTool;
+        [SerializeField] float _flySpeedMax = 40f;
 
         [Header("Start")]
         [SerializeField] float _startYaw = 45f;
@@ -50,7 +46,6 @@ namespace WorkspaceMapper.Scripts
         Camera _cam;
         Vector3 _focus;
         float _yaw, _pitch, _distance;
-        float _speedToast;
 
         void Awake()
         {
@@ -66,53 +61,36 @@ namespace WorkspaceMapper.Scripts
 
         void Update()
         {
-            if (_cam) _cam.nearClipPlane = _nearClip;
             Keyboard kb = Keyboard.current;
+            Mouse m = Mouse.current;
+            if (m == null) return;
             if (kb != null)
             {
                 if (kb[_toggleModeKey].wasPressedThisFrame) _mode = _mode == Mode.Orbit ? Mode.Fly : Mode.Orbit;
                 if (kb[_toggleProjectionKey].wasPressedThisFrame) SetOrthographic(!_cam.orthographic);
-                if (kb[_handKey].wasPressedThisFrame) _handTool = !_handTool;
-                if (kb.periodKey.isPressed) SetFlySpeed(_flyMoveSpeed * 1.03f);
-                if (kb.commaKey.isPressed) SetFlySpeed(_flyMoveSpeed * 0.97f);
             }
-            if (_speedToast > 0f) _speedToast -= Time.unscaledDeltaTime;
-            if (_mode == Mode.Orbit) TickOrbit(); else TickFly();
+            bool handPan = (_handTool || (kb != null && kb.spaceKey.isPressed)) && m.leftButton.isPressed;
+            if (handPan) { Pan(m.delta.ReadValue()); return; }
+            if (_mode == Mode.Orbit) TickOrbit(m); else TickFly(m, kb);
         }
 
-        void SetFlySpeed(float v)
+        void Pan(Vector2 d)
         {
-            _flyMoveSpeed = Mathf.Clamp(v, _flySpeedMin, _flySpeedMax);
-            _speedToast = 1.2f;
-        }
-
-        bool LeftPan(Mouse m)
-        {
-            if (!_handTool || !m.leftButton.isPressed) return false;
-            Vector2 d = m.delta.ReadValue();
             _focus += (-transform.right * d.x - transform.up * d.y) * (_panSpeed * Mathf.Max(_distance, 0.3f));
             if (_pivot) _pivot.position = _focus;
             ApplyOrbit();
-            return true;
         }
 
-        void TickOrbit()
+        void TickOrbit(Mouse m)
         {
-            Mouse m = Mouse.current;
-            if (m == null) return;
             if (_pivot) _focus = _pivot.position;
-            if (LeftPan(m)) return;
             Vector2 d = m.delta.ReadValue();
             if (m.rightButton.isPressed)
             {
                 _yaw += d.x * _orbitSpeed;
                 _pitch = Mathf.Clamp(_pitch - d.y * _orbitSpeed, _pitchMin, _pitchMax);
             }
-            if (m.middleButton.isPressed)
-            {
-                _focus += (-transform.right * d.x - transform.up * d.y) * (_panSpeed * _distance);
-                if (_pivot) _pivot.position = _focus;
-            }
+            if (m.middleButton.isPressed) Pan(d);
             float s = m.scroll.ReadValue().y;
             if (Mathf.Abs(s) > 0.01f)
                 _distance = Mathf.Clamp(_distance - s * _zoomSpeed * (_distance + 1f), _distanceMin, _distanceMax);
@@ -127,16 +105,11 @@ namespace WorkspaceMapper.Scripts
             if (_cam.orthographic) _cam.orthographicSize = Mathf.Max(0.05f, _distance * 0.5f);
         }
 
-        void TickFly()
+        void TickFly(Mouse m, Keyboard kb)
         {
-            Mouse m = Mouse.current;
-            Keyboard kb = Keyboard.current;
-            if (m == null || kb == null) return;
-            if (LeftPan(m)) return;
-
             float s = m.scroll.ReadValue().y;
             if (Mathf.Abs(s) > 0.01f) SetFlySpeed(_flyMoveSpeed * (1f + Mathf.Sign(s) * 0.12f));
-
+            if (kb == null) return;
             if (m.rightButton.isPressed)
             {
                 Vector2 d = m.delta.ReadValue();
@@ -162,37 +135,29 @@ namespace WorkspaceMapper.Scripts
             if (ortho) _cam.orthographicSize = Mathf.Max(0.05f, _distance * 0.5f);
         }
 
+        void SetFlySpeed(float v) => _flyMoveSpeed = Mathf.Clamp(v, _flySpeedMin, _flySpeedMax);
         void SnapView(float yaw, float pitch) { _mode = Mode.Orbit; _yaw = yaw; _pitch = pitch; ApplyOrbit(); }
 
-        void OnGUI()
-        {
-            if (!_showHud) return;
-            GUILayout.BeginArea(new Rect(Screen.width - 196, 10, 186, 210), Ui.Panel);
-            GUILayout.Label($"{_mode} | {(_cam && _cam.orthographic ? "Ortho" : "Persp")} | {(_handTool ? "Hand ON" : "Hand off")}", Ui.Header);
-            GUILayout.Label($"Fly speed  {_flyMoveSpeed:0.00}   ( , / . )", _speedToast > 0f ? Ui.Header : Ui.Label);
-            GUILayout.BeginHorizontal();
-            if (GUILayout.Button("Orbit", Ui.Button)) _mode = Mode.Orbit;
-            if (GUILayout.Button("Fly", Ui.Button)) _mode = Mode.Fly;
-            if (GUILayout.Button("Hand", Ui.Button)) _handTool = !_handTool;
-            GUILayout.EndHorizontal();
-            GUILayout.BeginHorizontal();
-            if (GUILayout.Button("Persp", Ui.Button)) SetOrthographic(false);
-            if (GUILayout.Button("Ortho", Ui.Button)) SetOrthographic(true);
-            GUILayout.EndHorizontal();
-            GUILayout.BeginHorizontal();
-            if (GUILayout.Button("Top", Ui.Button)) SnapView(0f, 89f);
-            if (GUILayout.Button("Front", Ui.Button)) SnapView(0f, 0f);
-            if (GUILayout.Button("Side", Ui.Button)) SnapView(90f, 0f);
-            GUILayout.EndHorizontal();
-            GUILayout.Label("RMB look/orbit · MMB pan · Hand=LMB pan", Ui.Label);
-            GUILayout.EndArea();
-        }
-
         public float FlySpeed { get => _flyMoveSpeed; set => SetFlySpeed(value); }
+        public float ZoomSpeed { get => _zoomSpeed; set => _zoomSpeed = Mathf.Max(0.0001f, value); }
+        public float PanSpeed { get => _panSpeed; set => _panSpeed = Mathf.Max(0.0001f, value); }
         public bool HandTool { get => _handTool; set => _handTool = value; }
         public bool Ortho => _cam && _cam.orthographic;
         public Mode CurrentMode => _mode;
         public void SetMode(Mode m) => _mode = m;
+        public void OrbitBy(float dxPixels, float dyPixels)
+        {
+            _mode = Mode.Orbit;
+            _yaw += dxPixels * _orbitSpeed;
+            _pitch = Mathf.Clamp(_pitch - dyPixels * _orbitSpeed, _pitchMin, _pitchMax);
+            ApplyOrbit();
+        }
+        public void ZoomBy(float scroll)
+        {
+            _distance = Mathf.Clamp(_distance - scroll * 0.12f * (_distance + 1f), _distanceMin, _distanceMax);
+            ApplyOrbit();
+        }
+        public void PanBy(float dxPixels, float dyPixels) => Pan(new Vector2(dxPixels, dyPixels));
         public void ToggleProjection() => SetOrthographic(!_cam.orthographic);
         public void ToggleHand() => _handTool = !_handTool;
         public void FrameFocus() { _mode = Mode.Orbit; ApplyOrbit(); }

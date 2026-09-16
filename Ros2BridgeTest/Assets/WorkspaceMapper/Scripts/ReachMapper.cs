@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Interactions;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -34,6 +33,7 @@ namespace WorkspaceMapper.Scripts
         [Header("Driven sweep (Play mode)")]
         [InfoBox("Drives the TWIN joints (not the real arm - no wear). Points draw live; table hits are painted red. Use coarse steps.")]
         [SerializeField] int liveUpdateEvery = 25;
+        [SerializeField] int sweepWaitFrames = 2;
         [SerializeField] float drivenMinStep = 18f;
 
         [Header("Filters")]
@@ -61,7 +61,11 @@ namespace WorkspaceMapper.Scripts
         Material _ptMat, _hitMat, _heatMat, _lineMat, _volMat;
         Texture2D _heatTex;
 
+        void OnEnable() { _sweep = SweepState.Idle; }
+        public bool Sweeping => _sweep != SweepState.Idle;
         public IReadOnlyList<Vector3> TablePointsWorld => _tablePts;
+        public int SweepWaitFrames { get => sweepWaitFrames; set => sweepWaitFrames = Mathf.Clamp(value, 1, 6); }
+        public void RestartSweep() { _sweep = SweepState.Idle; StopAllCoroutines(); StartDrivenSweep(); }
         public WorkspaceTable Table => table;
 
         // ---------- analytic (instant, no motion) ----------
@@ -108,7 +112,7 @@ namespace WorkspaceMapper.Scripts
         [Button("Resume"), HorizontalGroup("sweepctl"), PropertyOrder(-1)]
         public void ResumeSweep() { if (_sweep == SweepState.Paused) _sweep = SweepState.Running; }
         [Button("Stop"), HorizontalGroup("sweepctl"), PropertyOrder(-1)]
-        public void StopSweep() { if (_sweep != SweepState.Idle) _sweep = SweepState.Idle; }
+        public void StopSweep() { _sweep = SweepState.Idle; StopAllCoroutines(); }
 
         IEnumerator DrivenSweep()
         {
@@ -131,7 +135,7 @@ namespace WorkspaceMapper.Scripts
                 a[0] = j1; a[1] = j2; a[2] = j3; a[3] = j4; a[4] = j5; a[5] = 0f;
                 if (stopAtTable && MyCobot320Fk.PosMm(MyCobot320Fk.TcpBaseMatrix(a, toolLengthMm)).z < 0f) continue;
                 binding.DriveRealAngles(a);
-                yield return wait; yield return wait;
+                for (int wf = 0; wf < Mathf.Max(1, sweepWaitFrames); wf++) yield return wait;
                 Vector3 world = binding.GetTcpWorld();
                 _volumePts.Add(world);
                 if (table)
@@ -225,9 +229,8 @@ namespace WorkspaceMapper.Scripts
             MeshRenderer mr = Ensure<MeshRenderer>(t);
             float vs = Mathf.Max(voxelSizeM, 0.005f);
             var occ = new HashSet<Vector3Int>();
-            for (int p = 0; p < _volumePts.Count; p++)
+            foreach (var w in _volumePts)
             {
-                Vector3 w = _volumePts[p];
                 occ.Add(new Vector3Int(Mathf.FloorToInt(w.x / vs), Mathf.FloorToInt(w.y / vs), Mathf.FloorToInt(w.z / vs)));
             }
             Vector3Int[] nb = { new(1, 0, 0), new(-1, 0, 0), new(0, 1, 0), new(0, -1, 0), new(0, 0, 1), new(0, 0, -1) };
@@ -258,7 +261,8 @@ namespace WorkspaceMapper.Scripts
             v.Add(c + new Vector3(-h, -h, -h)); v.Add(c + new Vector3(h, -h, -h)); v.Add(c + new Vector3(h, h, -h)); v.Add(c + new Vector3(-h, h, -h));
             v.Add(c + new Vector3(-h, -h, h)); v.Add(c + new Vector3(h, -h, h)); v.Add(c + new Vector3(h, h, h)); v.Add(c + new Vector3(-h, h, h));
             int[] f = { 0, 2, 1, 0, 3, 2, 4, 5, 6, 4, 6, 7, 0, 1, 5, 0, 5, 4, 3, 7, 6, 3, 6, 2, 0, 4, 7, 0, 7, 3, 1, 2, 6, 1, 6, 5 };
-            for (int i = 0; i < f.Length; i++) tri.Add(b + f[i]);
+            foreach (var t in f)
+                tri.Add(b + t);
         }
 
         void RenderHeatmap()

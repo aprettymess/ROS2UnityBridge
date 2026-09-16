@@ -1,8 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using WorkspaceMapper.Scripts;
 
-namespace Interactions
+namespace WorkspaceMapper.Scripts
 {
     public class RobotMoveTool : MonoBehaviour
     {
@@ -63,7 +62,7 @@ namespace Interactions
                 if (pl.Raycast(r, out float t))
                 {
                     Vector3 hit = r.GetPoint(t);
-                    robotRoot.position = new Vector3(hit.x, robotRoot.position.y, hit.z);
+                    RobotMover.Move(robotRoot, new Vector3(hit.x, robotRoot.position.y, hit.z), robotRoot.rotation);
                 }
                 return;
             }
@@ -74,7 +73,7 @@ namespace Interactions
             if (pxPerWorld < 1e-3f) return;
             sdir /= sdir.magnitude;
             float along = Vector2.Dot(m.delta.ReadValue(), sdir) / pxPerWorld;
-            robotRoot.position = o + a * along;
+            RobotMover.Move(robotRoot, o + a * along, robotRoot.rotation);
         }
 
         int HitTest(Vector2 mp, Camera c)

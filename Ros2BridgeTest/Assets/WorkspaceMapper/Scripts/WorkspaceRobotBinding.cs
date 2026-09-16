@@ -38,6 +38,47 @@ namespace WorkspaceMapper.Scripts
         public Transform Tcp => tcp;
         public Vector3 GetTcpWorld() => tcp ? tcp.position : Vector3.zero;
         public float[] GetRealAnglesDeg() => (float[])realDeg.Clone();
+        public bool HasJoints { get { for (int i = 0; i < 6; i++) if (!joints[i]) return false; return true; } }
+        public void BindJoints() { AutoBind(); CaptureArmDrive(); }
+
+        float[] _origStiff, _origDamp;
+
+        void CaptureArmDrive()
+        {
+            _origStiff = new float[6];
+            _origDamp = new float[6];
+            for (int i = 0; i < 6; i++)
+            {
+                if (!joints[i]) continue;
+                _origStiff[i] = joints[i].xDrive.stiffness;
+                _origDamp[i] = joints[i].xDrive.damping;
+            }
+        }
+
+        // Only make a joint drivable if it currently can't hold a target at all.
+        public void EnsureDrivable()
+        {
+            if (_origStiff == null) CaptureArmDrive();
+            for (int i = 0; i < 6; i++)
+            {
+                if (!joints[i]) continue;
+                ArticulationDrive d = joints[i].xDrive;
+                if (d.stiffness < 50f) { d.stiffness = 2000f; d.damping = 200f; joints[i].xDrive = d; }
+            }
+        }
+
+        public void RestoreArmDrive()
+        {
+            if (_origStiff == null) return;
+            for (int i = 0; i < 6; i++)
+            {
+                if (!joints[i]) continue;
+                ArticulationDrive d = joints[i].xDrive;
+                d.stiffness = _origStiff[i];
+                d.damping = _origDamp[i];
+                joints[i].xDrive = d;
+            }
+        }
 
         public void DriveRealAngles(float[] real)
         {
@@ -50,6 +91,8 @@ namespace WorkspaceMapper.Scripts
                 joints[i].xDrive = d;
             }
         }
+
+        void Awake() { if (HasJoints) CaptureArmDrive(); }
 
         void Update()
         {

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Rendering;
 
-namespace Interactions
+namespace WorkspaceMapper.Scripts
 {
     public static class MaterialUtil
     {

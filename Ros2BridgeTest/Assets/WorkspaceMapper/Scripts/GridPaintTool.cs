@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Interactions;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,7 +14,7 @@ namespace WorkspaceMapper.Scripts
         [SerializeField, Range(1, 6)] int brushCells = 1;
 
         readonly Dictionary<Vector2Int, GameObject> _cells = new();
-        Material _mat;
+        readonly Dictionary<Color, Material> _mats = new();
 
         void Update()
         {
@@ -53,6 +52,7 @@ namespace WorkspaceMapper.Scripts
             for (int bx = -rad; bx <= rad; bx++)
             for (int bz = -rad; bz <= rad; bz++)
                 PaintCell(new Vector2Int(ix + bx, iz + bz), cM, L, W);
+            return;
         }
 
         void PaintCell(Vector2Int key, float cM, float L, float W)
@@ -64,19 +64,35 @@ namespace WorkspaceMapper.Scripts
             cell.transform.SetParent(transform, false);
             cell.transform.position = table.transform.TransformPoint(new Vector3((ix + 0.5f) * cM - L / 2f, 0.004f, (iz + 0.5f) * cM - W / 2f));
             cell.transform.rotation = table.transform.rotation * Quaternion.Euler(90f, 0f, 0f);
-            cell.transform.localScale = Vector3.one * (cM * 0.95f);
-            if (_mat == null)
-            {
-                _mat = MaterialUtil.MakeUnlit();
-                MaterialUtil.SetColor(_mat, paintColor);
-                MaterialUtil.SetTransparent(_mat);
-            }
-            cell.GetComponent<Renderer>().sharedMaterial = _mat;
+            cell.transform.localScale = Vector3.one * cM * 0.95f;
+            cell.GetComponent<Renderer>().sharedMaterial = MatFor(paintColor);
             _cells[key] = cell;
         }
 
         public Color PaintColor { get => paintColor; set => paintColor = value; }
         public int BrushCells { get => brushCells; set => brushCells = Mathf.Clamp(value, 1, 6); }
+
+        public void PaintWorldPoint(Vector3 world)
+        {
+            if (!table) return;
+            Vector3 local = table.transform.InverseTransformPoint(world);
+            float cM = table.CellMeters, L = table.LengthMeters, W = table.WidthMeters;
+            int ix = Mathf.FloorToInt((local.x + L / 2f) / cM);
+            int iz = Mathf.FloorToInt((local.z + W / 2f) / cM);
+            PaintCell(new Vector2Int(ix, iz), cM, L, W);
+        }
+
+        Material MatFor(Color c)
+        {
+            if (!_mats.TryGetValue(c, out Material m))
+            {
+                m = MaterialUtil.MakeUnlit();
+                MaterialUtil.SetColor(m, c);
+                MaterialUtil.SetTransparent(m);
+                _mats[c] = m;
+            }
+            return m;
+        }
 
         [Sirenix.OdinInspector.Button]
         public void ClearPaint()

@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Interactions;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -53,6 +52,10 @@ namespace WorkspaceMapper.Scripts
         public void SetWidthU(float v) { width = Mathf.Max(v, 0.01f); Rebuild(); }
         public void SetHeightU(float v) { height = Mathf.Max(v, 0.01f); Rebuild(); }
         public void SetCellU(float v) { cell = Mathf.Max(v, 0.01f); Rebuild(); }
+        public string UnitName => UnitTag;
+        public int UnitIndex => (int)unit;
+        public void SetUnitByIndex(int i) { unit = (LengthUnit)Mathf.Clamp(i, 0, 3); Rebuild(); }
+        public void SetMajorEvery(int m) { majorEvery = Mathf.Clamp(m, 1, 10); Rebuild(); }
 
         void OnEnable() => Rebuild();
 
